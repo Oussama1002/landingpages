@@ -1,0 +1,2281 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUXORA — Montres & Bracelets pour Homme et Femme | Coffrets Premium</title>
+  <meta name="description" content="Coffrets montres et bracelets premium pour homme et femme. Livraison partout au Maroc 24-48h. Paiement à la livraison. Dès 299 MAD.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #2C2C2C;
+      --accent: #A0785A;
+      --accent-hover: #8a6549;
+      --secondary: #D4C5B2;
+      --bg: #FAF8F5;
+      --bg-alt: rgba(212, 197, 178, 0.15);
+      --white: #FFFFFF;
+      --text: #2C2C2C;
+      --text-light: #6B6B6B;
+      --text-muted: #999;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; border: none; font-family: inherit; }
+    ul { list-style: none; }
+
+    /* ── HEADER ── */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(250, 248, 245, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      transition: var(--transition);
+    }
+
+    .header-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--primary);
+    }
+
+    .logo span { color: var(--accent); }
+
+    .header-icons {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .header-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: transparent;
+      transition: var(--transition);
+      font-size: 20px;
+    }
+
+    .header-icon:hover { background: var(--secondary); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 20px 40px;
+      background: linear-gradient(180deg, rgba(44,44,44,0) 0%, rgba(44,44,44,0.7) 60%, rgba(44,44,44,0.95) 100%);
+      overflow: hidden;
+      margin-top: 0;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(135deg, #3a3a3a 0%, #1a1a1a 50%, #2c2520 100%);
+    }
+
+    .hero-bg-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 16px;
+      color: rgba(255,255,255,0.3);
+      font-size: 14px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero-bg-placeholder .icon { font-size: 48px; }
+
+    .hero-content {
+      max-width: 1440px;
+      margin: 0 auto;
+      width: 100%;
+      padding-top: 120px;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .hero-tagline {
+      font-size: 13px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 7vw, 64px);
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: clamp(14px, 2.5vw, 18px);
+      color: rgba(255,255,255,0.8);
+      max-width: 600px;
+      margin: 0 auto 32px;
+      font-weight: 300;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-charcoal {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .btn-charcoal:hover {
+      background: #404040;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-bronze {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .btn-bronze:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--white);
+      background: rgba(255,255,255,0.1);
+    }
+
+    .trust-badges {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ── GENDER TABS ── */
+    .gender-tabs-section {
+      position: sticky;
+      top: 64px;
+      z-index: 900;
+      background: var(--bg);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .gender-tabs {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      padding: 0 20px;
+    }
+
+    .gender-tab {
+      flex: 1;
+      max-width: 200px;
+      padding: 16px 24px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-light);
+      background: transparent;
+      border-bottom: 3px solid transparent;
+      transition: var(--transition);
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+
+    .gender-tab:hover { color: var(--text); }
+
+    .gender-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ── PRODUCT GRID ── */
+    .products-section {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
+    }
+
+    .products-section .section-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .products-section .section-header h2 {
+      font-size: clamp(24px, 4vw, 36px);
+    }
+
+    .stock-alert {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FFF3E0;
+      color: #E65100;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 50px;
+      margin-top: 12px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .product-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .product-card[data-gender="homme"] { }
+    .product-card[data-gender="femme"] { }
+    .product-card[data-gender="couples"] { }
+
+    .product-card.hidden { display: none; }
+
+    .product-image {
+      position: relative;
+      aspect-ratio: 1;
+      background: #f0ece7;
+      overflow: hidden;
+    }
+
+    .product-image-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .product-image-placeholder .icon { font-size: 40px; }
+
+    .product-badge {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: #E53935;
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 50px;
+      z-index: 2;
+    }
+
+    .product-gender-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(44,44,44,0.8);
+      color: white;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 50px;
+      z-index: 2;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .product-info {
+      padding: 14px;
+    }
+
+    .product-name {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .product-contents {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-bottom: 10px;
+    }
+
+    .product-price {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .price-current {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .price-original {
+      font-size: 14px;
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+
+    .product-cta {
+      width: 100%;
+      padding: 12px;
+      background: var(--accent);
+      color: white;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .product-cta:hover { background: var(--accent-hover); }
+
+    /* ── VALUE PROPS ── */
+    .value-props {
+      background: var(--white);
+      padding: 48px 20px;
+      border-top: 1px solid rgba(0,0,0,0.04);
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+    }
+
+    .value-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .value-item {
+      text-align: center;
+      padding: 20px 12px;
+    }
+
+    .value-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .value-title {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .value-desc {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    /* ── FEATURED PRODUCT ── */
+    .featured {
+      background: var(--bg-alt);
+      padding: 60px 20px;
+    }
+
+    .featured-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .featured .section-label {
+      text-align: center;
+      font-size: 13px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .featured .section-title {
+      text-align: center;
+      font-size: clamp(24px, 4vw, 36px);
+      margin-bottom: 32px;
+    }
+
+    .featured-carousel {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 16px;
+      margin-bottom: 32px;
+    }
+
+    .featured-carousel::-webkit-scrollbar { display: none; }
+
+    .featured-slide {
+      flex: 0 0 85%;
+      scroll-snap-align: start;
+      aspect-ratio: 1;
+      border-radius: var(--radius);
+      background: #f0ece7;
+      overflow: hidden;
+    }
+
+    .featured-slide-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .featured-slide-placeholder .icon { font-size: 48px; }
+
+    .featured-details { text-align: center; }
+
+    .featured-pitch {
+      font-size: 16px;
+      color: var(--text-light);
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .featured-includes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 24px;
+      text-align: left;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .featured-include {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .featured-include .check {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .featured-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+
+    .featured-spec {
+      font-size: 12px;
+      color: var(--text-light);
+      padding: 6px 14px;
+      background: var(--white);
+      border-radius: 50px;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    /* ── REVIEWS ── */
+    .reviews-section {
+      padding: 60px 20px;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .reviews-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .reviews-header h2 {
+      font-size: clamp(24px, 4vw, 36px);
+      margin-bottom: 8px;
+    }
+
+    .reviews-rating-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      padding: 8px 20px;
+      border-radius: 50px;
+      box-shadow: var(--shadow-sm);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .review-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .review-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--primary);
+    }
+
+    .review-meta { flex: 1; }
+
+    .review-name {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .review-city {
+      font-size: 12px;
+      color: var(--text-light);
+    }
+
+    .review-gender-tag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 50px;
+      letter-spacing: 0.3px;
+    }
+
+    .review-gender-tag.homme {
+      background: rgba(44,44,44,0.08);
+      color: var(--primary);
+    }
+
+    .review-gender-tag.femme {
+      background: rgba(160,120,90,0.12);
+      color: var(--accent);
+    }
+
+    .review-stars {
+      color: #F59E0B;
+      font-size: 14px;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+
+    .review-text {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    /* ── GIFT SECTION ── */
+    .gift-section {
+      background: var(--primary);
+      color: var(--white);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .gift-section h2 {
+      font-size: clamp(24px, 4vw, 36px);
+      margin-bottom: 8px;
+    }
+
+    .gift-sub {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 32px;
+      font-size: 15px;
+    }
+
+    .gift-occasions {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      max-width: 500px;
+      margin: 0 auto 32px;
+    }
+
+    .gift-occasion {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.08);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .gift-occasion:hover { background: rgba(255,255,255,0.14); }
+
+    .gift-occasion .icon { font-size: 22px; }
+
+    .gift-note {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 24px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── INSTAGRAM / UGC ── */
+    .ugc-section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .ugc-section h2 {
+      font-size: clamp(24px, 4vw, 36px);
+      margin-bottom: 8px;
+    }
+
+    .ugc-handle {
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 24px;
+      font-size: 15px;
+    }
+
+    .ugc-scroll {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+    }
+
+    .ugc-scroll::-webkit-scrollbar { display: none; }
+
+    .ugc-item {
+      flex: 0 0 200px;
+      aspect-ratio: 1;
+      border-radius: var(--radius);
+      background: #f0ece7;
+      scroll-snap-align: start;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .ugc-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+
+    .ugc-placeholder .icon { font-size: 32px; }
+
+    .ugc-socials {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .ugc-social-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .ugc-social-link.ig {
+      background: linear-gradient(135deg, #833AB4, #E1306C, #F77737);
+      color: white;
+    }
+
+    .ugc-social-link.tt {
+      background: #000;
+      color: white;
+    }
+
+    /* ── FAQ ── */
+    .faq-section {
+      padding: 60px 20px;
+      background: var(--white);
+    }
+
+    .faq-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .faq-section h2 {
+      text-align: center;
+      font-size: clamp(24px, 4vw, 36px);
+      margin-bottom: 32px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: transparent;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      text-align: left;
+      gap: 16px;
+    }
+
+    .faq-icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: var(--transition);
+      color: var(--accent);
+    }
+
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    .faq-answer-inner {
+      padding-bottom: 20px;
+      font-size: 14px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    .faq-item.open .faq-answer { max-height: 200px; }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: var(--primary);
+      color: var(--white);
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(28px, 5vw, 44px);
+      margin-bottom: 8px;
+    }
+
+    .final-cta-sub {
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 28px;
+      font-size: 14px;
+    }
+
+    .final-cta .hero-ctas { margin-bottom: 20px; }
+
+    .final-cta-trust {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #1a1a1a;
+      color: rgba(255,255,255,0.5);
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .footer-logo span { color: var(--accent); }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 24px;
+      font-size: 13px;
+    }
+
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-socials {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-bottom: 24px;
+      font-size: 22px;
+    }
+
+    .footer-trust {
+      display: flex;
+      gap: 24px;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ── WHATSAPP FLOAT ── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+      transition: var(--transition);
+      font-size: 28px;
+      color: white;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
+    }
+
+    /* ── STICKY MOBILE CTA ── */
+    .sticky-mobile-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 998;
+      background: var(--white);
+      border-top: 1px solid rgba(0,0,0,0.08);
+      padding: 12px 16px;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+    }
+
+    .sticky-mobile-cta.visible { display: flex; }
+
+    .sticky-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .sticky-name {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .sticky-price {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .sticky-btn {
+      padding: 12px 24px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── CHECKOUT MODAL ── */
+    .checkout-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .checkout-overlay.open { display: flex; }
+
+    .checkout-modal {
+      background: var(--white);
+      width: 100%;
+      max-width: 500px;
+      max-height: 90vh;
+      border-radius: 20px 20px 0 0;
+      overflow-y: auto;
+      padding: 24px 20px 40px;
+      animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+
+    .checkout-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .checkout-header h3 {
+      font-size: 20px;
+    }
+
+    .checkout-close {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .checkout-product {
+      display: flex;
+      gap: 14px;
+      padding: 16px;
+      background: var(--bg);
+      border-radius: var(--radius);
+      margin-bottom: 24px;
+    }
+
+    .checkout-product-img {
+      width: 70px;
+      height: 70px;
+      border-radius: var(--radius-sm);
+      background: #f0ece7;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
+
+    .checkout-product-info {
+      flex: 1;
+    }
+
+    .checkout-product-name {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .checkout-product-contents {
+      font-size: 12px;
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
+
+    .checkout-product-price {
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+
+    .form-label .optional {
+      font-weight: 400;
+      color: var(--text-muted);
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid rgba(0,0,0,0.1);
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-family: inherit;
+      transition: var(--transition);
+      background: var(--white);
+      color: var(--text);
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(160,120,90,0.15);
+    }
+
+    .form-input.error { border-color: #E53935; }
+
+    .form-error {
+      font-size: 12px;
+      color: #E53935;
+      margin-top: 4px;
+      display: none;
+    }
+
+    .form-input.error + .form-error { display: block; }
+
+    select.form-input {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236B6B6B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 40px;
+    }
+
+    .phone-input-wrapper {
+      display: flex;
+      gap: 8px;
+    }
+
+    .phone-prefix {
+      padding: 14px 12px;
+      background: var(--bg);
+      border: 1.5px solid rgba(0,0,0,0.1);
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+      flex-shrink: 0;
+    }
+
+    .wa-confirm {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: rgba(37, 211, 102, 0.08);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      color: #128C7E;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .checkout-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--accent);
+      color: white;
+      border-radius: var(--radius-sm);
+      font-size: 16px;
+      font-weight: 700;
+      transition: var(--transition);
+      margin-bottom: 12px;
+    }
+
+    .checkout-submit:hover { background: var(--accent-hover); }
+
+    .checkout-trust {
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ── ORDER SUCCESS ── */
+    .order-success {
+      text-align: center;
+      padding: 40px 20px;
+      display: none;
+    }
+
+    .order-success.visible { display: block; }
+
+    .order-success .icon { font-size: 64px; margin-bottom: 16px; }
+
+    .order-success h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .order-success p {
+      color: var(--text-light);
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    /* ── DESKTOP OVERRIDES ── */
+    @media (min-width: 768px) {
+      .header-inner { padding: 14px 40px; }
+
+      .hero {
+        align-items: center;
+        padding: 0 60px;
+        min-height: 100vh;
+      }
+
+      .hero-content {
+        text-align: left;
+        max-width: 600px;
+        padding-top: 0;
+      }
+
+      .hero-ctas { justify-content: flex-start; }
+      .trust-badges { justify-content: flex-start; }
+
+      .gender-tabs-section { top: 60px; }
+
+      .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .value-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 32px;
+      }
+
+      .reviews-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .gift-occasions {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 600px;
+      }
+
+      .ugc-item { flex: 0 0 250px; }
+
+      .checkout-overlay { align-items: center; }
+
+      .checkout-modal {
+        border-radius: var(--radius);
+        max-height: 85vh;
+      }
+
+      .sticky-mobile-cta { display: none !important; }
+      .whatsapp-float { bottom: 32px; right: 32px; }
+    }
+
+    @media (min-width: 1024px) {
+      .product-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .reviews-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .featured-carousel {
+        justify-content: center;
+      }
+
+      .featured-slide { flex: 0 0 300px; }
+    }
+
+    @media (min-width: 1440px) {
+      .hero { padding: 0 120px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════ HEADER ═══════ -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <div class="logo">LUXO<span>RA</span></div>
+      <div class="header-icons">
+        <a href="https://wa.me/212XXXXXXXXX?text=Salam%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20un%20coffret" class="header-icon" title="WhatsApp" aria-label="Nous contacter sur WhatsApp">💬</a>
+        <button class="header-icon" id="cartIcon" aria-label="Panier">🛒</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════ HERO ═══════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-bg-placeholder">
+        <span class="icon">📸</span>
+        <span>[REPLACE: Split lifestyle photo — male wrist (left) + female wrist (right), both wearing watches + bracelets. Warm, moody lighting. 1920x1080 min, WebP format]</span>
+      </div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-tagline">L'elegance n'a pas de genre</p>
+      <h1>Un Style Pour <em>Chacun</em></h1>
+      <p class="hero-sub">Montres & bracelets pour homme et femme — coffrets premium livrés chez vous en 24-48h</p>
+      <div class="hero-ctas">
+        <a href="#products" class="btn btn-charcoal" data-tab="homme">Collection Homme</a>
+        <a href="#products" class="btn btn-bronze" data-tab="femme">Collection Femme ✨</a>
+      </div>
+      <div class="trust-badges">
+        <span class="trust-badge">🚚 Livraison partout au Maroc</span>
+        <span class="trust-badge">💵 Paiement à la livraison</span>
+        <span class="trust-badge">✅ Satisfait ou remboursé</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ GENDER TABS ═══════ -->
+  <div class="gender-tabs-section" id="tabsSection">
+    <div class="gender-tabs" id="genderTabs">
+      <button class="gender-tab active" data-filter="homme">👨 HOMME</button>
+      <button class="gender-tab" data-filter="femme">👩 FEMME</button>
+      <button class="gender-tab" data-filter="couples">💝 COUPLES</button>
+    </div>
+  </div>
+
+  <!-- ═══════ PRODUCT GRID ═══════ -->
+  <section class="products-section" id="products">
+    <div class="section-header">
+      <h2 id="productsTitle">Nos Coffrets Homme</h2>
+      <div class="stock-alert">⚡ Stock limité — <span id="stockCount">23</span> coffrets restants</div>
+    </div>
+
+    <div class="product-grid" id="productGrid">
+
+      <!-- HOMME -->
+      <div class="product-card" data-gender="homme" data-name="Coffret Atlas — Noir Classique" data-price="349" data-contents="Montre + 2 bracelets">
+        <div class="product-image">
+          <span class="product-badge">🔥 Best-seller</span>
+          <span class="product-gender-badge">Pour Lui</span>
+          <div class="product-image-placeholder">
+            <span class="icon">⌚</span>
+            <span>[Photo: montre noire + bracelet cuir + chaîne sur poignet homme]</span>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Coffret Atlas — Noir Classique</h3>
+          <p class="product-contents">Montre + bracelet cuir + bracelet chaîne</p>
+          <div class="product-price">
+            <span class="price-current">349 MAD</span>
+            <span class="price-original">499 MAD</span>
+          </div>
+          <button class="product-cta" onclick="openCheckout(this)">Commander</button>
+        </div>
+      </div>
+
+      <div class="product-card" data-gender="homme" data-name="Coffret Sport Élite" data-price="329" data-contents="Montre + 2 bracelets">
+        <div class="product-image">
+          <span class="product-gender-badge">Pour Lui</span>
+          <div class="product-image-placeholder">
+            <span class="icon">⌚</span>
+            <span>[Photo: montre sport + bracelet tressé + bracelet perles sur poignet homme]</span>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Coffret Sport Élite</h3>
+          <p class="product-contents">Montre sport + bracelet tressé + bracelet perles</p>
+          <div class="product-price">
+            <span class="price-current">329 MAD</span>
+            <span class="price-original">479 MAD</span>
+          </div>
+          <button class="product-cta" onclick="openCheckout(this)">Commander</button>
+        </div>
+      </div>
+
+      <div class="product-card" data-gender="homme" data-name="Coffret Business" data-price="379" data-contents="Montre + 2 bracelets">
+        <div class="product-image">
+          <span class="product-gender-badge">Pour Lui</span>
+          <div class="product-image-placeholder">
+            <span class="icon">⌚</span>
+            <span>[Photo: montre argent + bracelets minimalistes sur poignet homme]</span>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Coffret Business</h3>
+          <p class="product-contents">Montre argent + 2 bracelets minimalistes</p>
+          <div class="product-price">
+            <span class="price-current">379 MAD</span>
+            <span class="price-original">549 MAD</span>
+          </div>
+          <button class="product-cta" onclick="openCheckout(this)">Commander</button>
+        </div>
+      </div>
+
+      <!-- FEMME -->
+      <div class="product-card hidden" data-gender="femme" data-name="Coffret Rose Gold — Nora" data-price="349" data-contents="Montre + 2 bracelets">
+        <div class="product-image">
+          <span class="product-badge">🔥 Best-seller</span>
+          <span class="product-gender-badge">Pour Elle</span>
+          <div class="product-image-placeholder">
+            <span class="icon">⌚</span>
+            <span>[Photo: montre rose gold + bracelet charm + bracelet cristal sur poignet femme]</span>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Coffret Rose Gold — Nora</h3>
+          <p class="product-contents">Montre rose gold + bracelet charm + bracelet cristal</p>
+          <div class="product-price">
+            <span class="price-current">349 MAD</span>
+            <span class="price-original">499 MAD</span>
+          </div>
+          <button class="product-cta" onclick="openCheckout(this)">Commander</button>
+        </div>
+      </div>
+
+      <div class="product-card hidden" data-gender="femme" data-name="Coffret Minimaliste — Lina" data-price="299" data-contents="Montre + 2 bracelets">
+        <div class="product-image">
+          <span class="product-gender-badge">Pour Elle</span>
+          <div class="product-image-placeholder">
+            <span class="icon">⌚</span>
+            <span>[Photo: montre petit cadran + bracelets fins sur poignet femme]</span>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Coffret Minimaliste — Lina</h3>
+          <p class="product-contents">Montre petit cadran + 2 bracelets fins</p>
+          <div class="product-price">
+            <span class="price-current">299 MAD</span>
+            <span class="price-original">449 MAD</span>
+          </div>
+          <button class="product-cta" onclick="openCheckout(this)">Commander</button>
+        </div>
+      </div>
+
+      <div class="product-card hidden" data-gender="femme" data-name="Coffret Bohème — Amira" data-price="359" data-contents="Montre + 2 bracelets">
+        <div class="product-image">
+          <span class="product-gender-badge">Pour Elle</span>
+          <div class="product-image-placeholder">
+            <span class="icon">⌚</span>
+            <span>[Photo: montre dorée + bracelet perle + bracelet perles sur poignet femme]</span>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Coffret Bohème — Amira</h3>
+          <p class="product-contents">Montre dorée + bracelet perle + bracelet perles</p>
+          <div class="product-price">
+            <span class="price-current">359 MAD</span>
+            <span class="price-original">519 MAD</span>
+          </div>
+          <button class="product-cta" onclick="openCheckout(this)">Commander</button>
+        </div>
+      </div>
+
+      <!-- COUPLES -->
+      <div class="product-card hidden" data-gender="couples" data-name="Coffret Duo Classique" data-price="599" data-contents="2 montres + 4 bracelets">
+        <div class="product-image">
+          <span class="product-badge">💝 -99 MAD</span>
+          <span class="product-gender-badge">Lui & Elle</span>
+          <div class="product-image-placeholder">
+            <span class="icon">⌚⌚</span>
+            <span>[Photo: coffret his (noir) + hers (rose gold) côte à côte]</span>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Coffret Duo Classique</h3>
+          <p class="product-contents">Son coffret noir + son coffret rose gold</p>
+          <div class="product-price">
+            <span class="price-current">599 MAD</span>
+            <span class="price-original">698 MAD</span>
+          </div>
+          <button class="product-cta" onclick="openCheckout(this)">Commander le Duo</button>
+        </div>
+      </div>
+
+      <div class="product-card hidden" data-gender="couples" data-name="Coffret Duo Assorti" data-price="649" data-contents="2 montres + 4 bracelets">
+        <div class="product-image">
+          <span class="product-badge">💝 -109 MAD</span>
+          <span class="product-gender-badge">Lui & Elle</span>
+          <div class="product-image-placeholder">
+            <span class="icon">⌚⌚</span>
+            <span>[Photo: coffrets assortis matching couleurs]</span>
+          </div>
+        </div>
+        <div class="product-info">
+          <h3 class="product-name">Coffret Duo Assorti</h3>
+          <p class="product-contents">Coffrets assortis matching — lui & elle</p>
+          <div class="product-price">
+            <span class="price-current">649 MAD</span>
+            <span class="price-original">758 MAD</span>
+          </div>
+          <button class="product-cta" onclick="openCheckout(this)">Commander le Duo</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════ VALUE PROPS ═══════ -->
+  <section class="value-props">
+    <div class="value-grid">
+      <div class="value-item">
+        <div class="value-icon">📦</div>
+        <h4 class="value-title">Coffret Cadeau Premium</h4>
+        <p class="value-desc">Packaging soigné, prêt à offrir</p>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">🚚</div>
+        <h4 class="value-title">Livraison 24-48h</h4>
+        <p class="value-desc">Partout au Maroc, paiement à la livraison</p>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">🔄</div>
+        <h4 class="value-title">Retour Gratuit 7 jours</h4>
+        <p class="value-desc">Pas satisfait ? On rembourse.</p>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">💎</div>
+        <h4 class="value-title">Qualité Garantie</h4>
+        <p class="value-desc">Acier inoxydable, cuir véritable, garantie 6 mois</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FEATURED PRODUCT ═══════ -->
+  <section class="featured">
+    <div class="featured-inner">
+      <p class="section-label">Le Coffret du Moment</p>
+      <h2 class="section-title">Coffret Atlas — Noir Classique</h2>
+
+      <div class="featured-carousel">
+        <div class="featured-slide">
+          <div class="featured-slide-placeholder">
+            <span class="icon">📸</span>
+            <span>[Flatlay — montre + bracelets]</span>
+          </div>
+        </div>
+        <div class="featured-slide">
+          <div class="featured-slide-placeholder">
+            <span class="icon">📸</span>
+            <span>[Sur poignet homme]</span>
+          </div>
+        </div>
+        <div class="featured-slide">
+          <div class="featured-slide-placeholder">
+            <span class="icon">📸</span>
+            <span>[Sur poignet femme]</span>
+          </div>
+        </div>
+        <div class="featured-slide">
+          <div class="featured-slide-placeholder">
+            <span class="icon">📸</span>
+            <span>[Packaging / boîte cadeau]</span>
+          </div>
+        </div>
+        <div class="featured-slide">
+          <div class="featured-slide-placeholder">
+            <span class="icon">📸</span>
+            <span>[Close-up détails cadran]</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="featured-details">
+        <p class="featured-pitch">Le coffret qui fait l'unanimité — déjà 300+ vendus</p>
+
+        <div class="featured-includes">
+          <div class="featured-include"><span class="check">✓</span> 1 montre acier inoxydable</div>
+          <div class="featured-include"><span class="check">✓</span> 2 bracelets assortis</div>
+          <div class="featured-include"><span class="check">✓</span> Boîte cadeau premium</div>
+          <div class="featured-include"><span class="check">✓</span> Carte de garantie</div>
+        </div>
+
+        <div class="featured-specs">
+          <span class="featured-spec">Mouvement Quartz</span>
+          <span class="featured-spec">Étanchéité 3ATM</span>
+          <span class="featured-spec">Bracelet ajustable</span>
+          <span class="featured-spec">Garantie 6 mois</span>
+        </div>
+
+        <button class="btn btn-bronze" onclick="openCheckoutDirect('Coffret Atlas — Noir Classique', '349', 'Montre + 2 bracelets')">Commander ce Coffret — 349 MAD</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ REVIEWS ═══════ -->
+  <section class="reviews-section">
+    <div class="reviews-header">
+      <h2>Ce Que Disent Nos Clients</h2>
+      <div class="reviews-rating-badge">⭐ 4.8/5 — 350+ clients satisfaits</div>
+    </div>
+
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-avatar">Y</div>
+          <div class="review-meta">
+            <div class="review-name">Youssef</div>
+            <div class="review-city">Casablanca</div>
+          </div>
+          <span class="review-gender-tag homme">Homme</span>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Qualité dyal bsah, le coffret est magnifique. J'ai pris le Noir Classique, kayen niveau! 🔥</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-avatar">S</div>
+          <div class="review-meta">
+            <div class="review-name">Salma</div>
+            <div class="review-city">Marrakech</div>
+          </div>
+          <span class="review-gender-tag femme">Femme</span>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">J'ai offert le coffret Duo à mon copain, il a adoré 😍 et moi aussi ! Le packaging est vraiment premium.</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-avatar">A</div>
+          <div class="review-meta">
+            <div class="review-name">Amine</div>
+            <div class="review-city">Rabat</div>
+          </div>
+          <span class="review-gender-tag homme">Homme</span>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Livraison rapide, packaging top, rien à dire. La montre est lourde, bhal les marques cher ✅</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-avatar">F</div>
+          <div class="review-meta">
+            <div class="review-name">Fatima Zahra</div>
+            <div class="review-city">Fès</div>
+          </div>
+          <span class="review-gender-tag femme">Femme</span>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Deuxième commande, cette fois pour ma soeur. Toujours au top! Le Bohème est juste magnifique 💕</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-avatar">K</div>
+          <div class="review-meta">
+            <div class="review-name">Khalid</div>
+            <div class="review-city">Tanger</div>
+          </div>
+          <span class="review-gender-tag homme">Homme</span>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Khdit coffret Sport Élite, vraiment jat mezyana. Le bracelet tressé kayn f niveau. Merci LUXORA 👌</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-avatar">H</div>
+          <div class="review-meta">
+            <div class="review-name">Hajar</div>
+            <div class="review-city">Agadir</div>
+          </div>
+          <span class="review-gender-tag femme">Femme</span>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Le Rose Gold Nora est exactement comme sur les photos! Très satisfaite, je recommande 100% 🌸</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-avatar">O</div>
+          <div class="review-meta">
+            <div class="review-name">Omar</div>
+            <div class="review-city">Meknès</div>
+          </div>
+          <span class="review-gender-tag homme">Homme</span>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Chrit l walida diali coffret Minimaliste, farhatha bzzaf. Merci 3la l qualité 🙏</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-avatar">I</div>
+          <div class="review-meta">
+            <div class="review-name">Imane</div>
+            <div class="review-city">Oujda</div>
+          </div>
+          <span class="review-gender-tag femme">Femme</span>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Commandez daba, vous allez pas regretter! La qualité foq li kantkhayel. Wselni f 24h 🚀</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════ GIFT SECTION ═══════ -->
+  <section class="gift-section">
+    <h2>L'Idée Cadeau Parfaite 🎁</h2>
+    <p class="gift-sub">Un coffret pour chaque occasion, prêt à offrir</p>
+
+    <div class="gift-occasions">
+      <div class="gift-occasion"><span class="icon">🎂</span> Anniversaire</div>
+      <div class="gift-occasion"><span class="icon">💕</span> Saint-Valentin</div>
+      <div class="gift-occasion"><span class="icon">🎓</span> Réussite / Diplôme</div>
+      <div class="gift-occasion"><span class="icon">🕌</span> Aïd</div>
+      <div class="gift-occasion"><span class="icon">💼</span> Cadeau pro</div>
+      <div class="gift-occasion"><span class="icon">🎉</span> Juste pour soi</div>
+    </div>
+
+    <p class="gift-note">Chaque coffret est livré dans un packaging cadeau prêt à offrir — pas besoin d'emballer.</p>
+
+    <a href="#products" class="btn btn-bronze">Offrir un Coffret</a>
+  </section>
+
+  <!-- ═══════ UGC / INSTAGRAM ═══════ -->
+  <section class="ugc-section">
+    <h2>Rejoins le Mouvement</h2>
+    <p class="ugc-handle">@luxora.ma</p>
+
+    <div class="ugc-scroll">
+      <div class="ugc-item"><div class="ugc-placeholder"><span class="icon">📸</span><span>Homme — wrist shot</span></div></div>
+      <div class="ugc-item"><div class="ugc-placeholder"><span class="icon">📸</span><span>Femme — wrist shot</span></div></div>
+      <div class="ugc-item"><div class="ugc-placeholder"><span class="icon">📸</span><span>Homme — outfit</span></div></div>
+      <div class="ugc-item"><div class="ugc-placeholder"><span class="icon">📸</span><span>Femme — unboxing</span></div></div>
+      <div class="ugc-item"><div class="ugc-placeholder"><span class="icon">📸</span><span>Homme — lifestyle</span></div></div>
+      <div class="ugc-item"><div class="ugc-placeholder"><span class="icon">📸</span><span>Femme — lifestyle</span></div></div>
+    </div>
+
+    <div class="ugc-socials">
+      <a href="#" class="ugc-social-link ig">📷 Instagram</a>
+      <a href="#" class="ugc-social-link tt">🎵 TikTok</a>
+    </div>
+  </section>
+
+  <!-- ═══════ FAQ ═══════ -->
+  <section class="faq-section">
+    <div class="faq-inner">
+      <h2>Questions Fréquentes</h2>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Quels sont les délais de livraison ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">24-48h pour Casablanca et Rabat, 48-72h pour le reste du Maroc. Vous recevez un message WhatsApp dès que votre colis est expédié.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Comment payer ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Paiement à la livraison (COD). Vous payez uniquement quand vous recevez votre coffret — aucun paiement en ligne requis.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Les montres sont pour homme ou femme ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Les deux ! Nous avons des collections dédiées Homme, Femme, et même des coffrets Duo pour couples. Utilisez les onglets en haut de la page pour filtrer.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Puis-je retourner le produit ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Oui, retour gratuit sous 7 jours si le produit est dans son état d'origine. Contactez-nous sur WhatsApp pour organiser le retour.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Le coffret est emballé pour offrir ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Oui, chaque coffret est livré dans une boîte cadeau premium, prêt à offrir. Pas besoin d'emballer — c'est déjà fait !</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Les montres sont garanties ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Oui, garantie 6 mois couvrant tout défaut de fabrication. Une carte de garantie est incluse dans chaque coffret.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Vous livrez dans ma ville ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Nous livrons dans toutes les villes du Maroc, même les petites villes. Livraison f dar — tay wsel l baab.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════ FINAL CTA ═══════ -->
+  <section class="final-cta">
+    <h2>Trouvez Votre Coffret</h2>
+    <p class="final-cta-sub">Commandez daba — livraison chez vous en 24-48h</p>
+    <div class="hero-ctas">
+      <a href="#products" class="btn btn-charcoal" data-tab="homme">Collection Homme</a>
+      <a href="#products" class="btn btn-bronze" data-tab="femme">Collection Femme</a>
+    </div>
+    <p class="final-cta-trust">Paiement à la livraison &bull; Livraison 24-48h &bull; Retour gratuit 7 jours</p>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer class="footer">
+    <div class="footer-logo">LUXO<span>RA</span></div>
+    <div class="footer-links">
+      <a href="#">Politique de confidentialité</a>
+      <a href="#">CGV</a>
+      <a href="#">Contact</a>
+      <a href="#">Suivi de commande</a>
+    </div>
+    <div class="footer-socials">
+      <a href="#" title="Instagram">📷</a>
+      <a href="#" title="TikTok">🎵</a>
+      <a href="https://wa.me/212XXXXXXXXX" title="WhatsApp">💬</a>
+    </div>
+    <div class="footer-trust">
+      <span>💵 Paiement à la livraison</span>
+      <span>🚚 Livraison rapide</span>
+      <span>🛡️ Garantie 6 mois</span>
+    </div>
+    <p class="footer-copy">&copy; 2026 LUXORA. Tous droits réservés.</p>
+  </footer>
+
+  <!-- ═══════ WHATSAPP FLOATING BUTTON ═══════ -->
+  <a href="https://wa.me/212XXXXXXXXX?text=Salam%2C%20je%20suis%20int%C3%A9ress%C3%A9(e)%20par%20un%20coffret%20%5BHomme%2FFemme%5D" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactez-nous sur WhatsApp">💬</a>
+
+  <!-- ═══════ STICKY MOBILE CTA ═══════ -->
+  <div class="sticky-mobile-cta" id="stickyMobileCta">
+    <div class="sticky-info">
+      <div class="sticky-name">Coffret Atlas — Noir Classique</div>
+      <div class="sticky-price">349 MAD</div>
+    </div>
+    <button class="sticky-btn" onclick="openCheckoutDirect('Coffret Atlas — Noir Classique', '349', 'Montre + 2 bracelets')">Commander</button>
+  </div>
+
+  <!-- ═══════ CHECKOUT MODAL ═══════ -->
+  <div class="checkout-overlay" id="checkoutOverlay">
+    <div class="checkout-modal">
+
+      <!-- Order Form -->
+      <div id="checkoutForm">
+        <div class="checkout-header">
+          <h3>Votre Commande</h3>
+          <button class="checkout-close" onclick="closeCheckout()">&times;</button>
+        </div>
+
+        <div class="checkout-product">
+          <div class="checkout-product-img">⌚</div>
+          <div class="checkout-product-info">
+            <div class="checkout-product-name" id="checkoutProductName">Coffret Atlas</div>
+            <div class="checkout-product-contents" id="checkoutProductContents">Montre + 2 bracelets</div>
+            <div class="checkout-product-price" id="checkoutProductPrice">349 MAD</div>
+          </div>
+        </div>
+
+        <form id="codForm" onsubmit="submitOrder(event)">
+          <div class="form-group">
+            <label class="form-label" for="fullName">Nom complet *</label>
+            <input type="text" class="form-input" id="fullName" name="fullName" placeholder="Votre nom complet" required>
+            <div class="form-error">Veuillez entrer votre nom</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="phone">Téléphone *</label>
+            <div class="phone-input-wrapper">
+              <span class="phone-prefix">🇲🇦 +212</span>
+              <input type="tel" class="form-input" id="phone" name="phone" placeholder="6XX XXX XXX" required pattern="^[0-9]{9}$" maxlength="9">
+            </div>
+            <div class="form-error" id="phoneError">Numéro invalide — format: 6XX XXX XXX</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="city">Ville *</label>
+            <select class="form-input" id="city" name="city" required>
+              <option value="">Choisir votre ville</option>
+              <option value="Casablanca">Casablanca</option>
+              <option value="Rabat">Rabat</option>
+              <option value="Marrakech">Marrakech</option>
+              <option value="Fès">Fès</option>
+              <option value="Tanger">Tanger</option>
+              <option value="Meknès">Meknès</option>
+              <option value="Agadir">Agadir</option>
+              <option value="Oujda">Oujda</option>
+              <option value="Kénitra">Kénitra</option>
+              <option value="Tétouan">Tétouan</option>
+              <option value="Salé">Salé</option>
+              <option value="Temara">Temara</option>
+              <option value="Safi">Safi</option>
+              <option value="Mohammedia">Mohammedia</option>
+              <option value="El Jadida">El Jadida</option>
+              <option value="Beni Mellal">Beni Mellal</option>
+              <option value="Nador">Nador</option>
+              <option value="Khouribga">Khouribga</option>
+              <option value="Settat">Settat</option>
+              <option value="Berrechid">Berrechid</option>
+              <option value="Taza">Taza</option>
+              <option value="Khemisset">Khemisset</option>
+              <option value="Larache">Larache</option>
+              <option value="Guelmim">Guelmim</option>
+              <option value="Errachidia">Errachidia</option>
+              <option value="Ouarzazate">Ouarzazate</option>
+              <option value="Al Hoceima">Al Hoceima</option>
+              <option value="Ifrane">Ifrane</option>
+              <option value="Azrou">Azrou</option>
+              <option value="Essaouira">Essaouira</option>
+              <option value="Tiznit">Tiznit</option>
+              <option value="Taroudant">Taroudant</option>
+              <option value="Tan-Tan">Tan-Tan</option>
+              <option value="Dakhla">Dakhla</option>
+              <option value="Laâyoune">Laâyoune</option>
+              <option value="Autre">Autre ville</option>
+            </select>
+            <div class="form-error">Veuillez sélectionner votre ville</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="address">Adresse *</label>
+            <input type="text" class="form-input" id="address" name="address" placeholder="Votre adresse de livraison" required>
+            <div class="form-error">Veuillez entrer votre adresse</div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">Email <span class="optional">(optionnel)</span></label>
+            <input type="email" class="form-input" id="email" name="email" placeholder="votre@email.com">
+          </div>
+
+          <div class="wa-confirm">💬 Commande confirmée par WhatsApp</div>
+
+          <button type="submit" class="checkout-submit">Confirmer la Commande — Paiement à la Livraison</button>
+          <p class="checkout-trust">🔒 Vos données sont sécurisées — Livraison gratuite</p>
+        </form>
+      </div>
+
+      <!-- Order Success -->
+      <div class="order-success" id="orderSuccess">
+        <div class="icon">✅</div>
+        <h3>Commande Confirmée !</h3>
+        <p>Merci pour votre commande. Vous allez recevoir une confirmation par WhatsApp.</p>
+        <p><strong>Livraison estimée : 24-48h</strong></p>
+        <button class="btn btn-bronze" onclick="closeCheckout()" style="margin-top:16px;">Fermer</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══════ JAVASCRIPT ═══════ -->
+  <script>
+    // ── Gender Tab Filtering ──
+    const tabs = document.querySelectorAll('.gender-tab');
+    const cards = document.querySelectorAll('.product-card');
+    const productsTitle = document.getElementById('productsTitle');
+    const heroCtas = document.querySelectorAll('[data-tab]');
+
+    const titleMap = {
+      homme: 'Nos Coffrets Homme',
+      femme: 'Nos Coffrets Femme',
+      couples: 'Nos Coffrets Couples'
+    };
+
+    function filterProducts(gender) {
+      tabs.forEach(t => t.classList.toggle('active', t.dataset.filter === gender));
+      cards.forEach(c => c.classList.toggle('hidden', c.dataset.gender !== gender));
+      productsTitle.textContent = titleMap[gender] || 'Nos Coffrets';
+
+      // Track gender tab click
+      if (typeof fbq === 'function') {
+        fbq('trackCustom', 'GenderTabClick', { gender: gender });
+      }
+      if (typeof ttq !== 'undefined') {
+        ttq.track('GenderTabClick', { gender: gender });
+      }
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => filterProducts(tab.dataset.filter));
+    });
+
+    heroCtas.forEach(cta => {
+      cta.addEventListener('click', (e) => {
+        const targetTab = cta.dataset.tab;
+        if (targetTab) filterProducts(targetTab);
+      });
+    });
+
+    // ── FAQ Accordion ──
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    // ── Sticky Mobile CTA ──
+    const stickyMobileCta = document.getElementById('stickyMobileCta');
+    const hero = document.getElementById('hero');
+
+    if (window.innerWidth < 768) {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          stickyMobileCta.classList.toggle('visible', !entry.isIntersecting);
+        },
+        { threshold: 0 }
+      );
+      observer.observe(hero);
+    }
+
+    // ── Checkout Modal ──
+    const overlay = document.getElementById('checkoutOverlay');
+    let currentProduct = {};
+
+    function openCheckout(btn) {
+      const card = btn.closest('.product-card');
+      currentProduct = {
+        name: card.dataset.name,
+        price: card.dataset.price,
+        contents: card.dataset.contents
+      };
+      fillCheckout();
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+
+      // Track
+      if (typeof fbq === 'function') {
+        fbq('track', 'AddToCart', { content_name: currentProduct.name, value: parseFloat(currentProduct.price), currency: 'MAD' });
+      }
+      if (typeof ttq !== 'undefined') {
+        ttq.track('AddToCart', { content_name: currentProduct.name, value: parseFloat(currentProduct.price), currency: 'MAD' });
+      }
+    }
+
+    function openCheckoutDirect(name, price, contents) {
+      currentProduct = { name, price, contents };
+      fillCheckout();
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+
+      if (typeof fbq === 'function') {
+        fbq('track', 'AddToCart', { content_name: name, value: parseFloat(price), currency: 'MAD' });
+      }
+      if (typeof ttq !== 'undefined') {
+        ttq.track('AddToCart', { content_name: name, value: parseFloat(price), currency: 'MAD' });
+      }
+    }
+
+    function fillCheckout() {
+      document.getElementById('checkoutProductName').textContent = currentProduct.name;
+      document.getElementById('checkoutProductContents').textContent = currentProduct.contents;
+      document.getElementById('checkoutProductPrice').textContent = currentProduct.price + ' MAD';
+      document.getElementById('checkoutForm').style.display = 'block';
+      document.getElementById('orderSuccess').classList.remove('visible');
+
+      if (typeof fbq === 'function') {
+        fbq('track', 'InitiateCheckout', { content_name: currentProduct.name, value: parseFloat(currentProduct.price), currency: 'MAD' });
+      }
+      if (typeof ttq !== 'undefined') {
+        ttq.track('InitiateCheckout', { content_name: currentProduct.name, value: parseFloat(currentProduct.price), currency: 'MAD' });
+      }
+    }
+
+    function closeCheckout() {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeCheckout();
+    });
+
+    // ── Phone Validation ──
+    const phoneInput = document.getElementById('phone');
+    phoneInput.addEventListener('input', () => {
+      phoneInput.value = phoneInput.value.replace(/\D/g, '').slice(0, 9);
+    });
+
+    function validatePhone(num) {
+      return /^[0-9]{9}$/.test(num) && (num.startsWith('6') || num.startsWith('7') || num.startsWith('5'));
+    }
+
+    // ── Form Submit ──
+    function submitOrder(e) {
+      e.preventDefault();
+      let valid = true;
+
+      const fullName = document.getElementById('fullName');
+      const phone = document.getElementById('phone');
+      const city = document.getElementById('city');
+      const address = document.getElementById('address');
+
+      [fullName, phone, city, address].forEach(f => f.classList.remove('error'));
+
+      if (!fullName.value.trim()) { fullName.classList.add('error'); valid = false; }
+      if (!validatePhone(phone.value)) {
+        phone.classList.add('error');
+        document.getElementById('phoneError').style.display = 'block';
+        valid = false;
+      }
+      if (!city.value) { city.classList.add('error'); valid = false; }
+      if (!address.value.trim()) { address.classList.add('error'); valid = false; }
+
+      if (!valid) return;
+
+      // Track purchase
+      if (typeof fbq === 'function') {
+        fbq('track', 'Purchase', {
+          content_name: currentProduct.name,
+          value: parseFloat(currentProduct.price),
+          currency: 'MAD'
+        });
+      }
+      if (typeof ttq !== 'undefined') {
+        ttq.track('CompletePayment', {
+          content_name: currentProduct.name,
+          value: parseFloat(currentProduct.price),
+          currency: 'MAD'
+        });
+      }
+
+      // Show success
+      document.getElementById('checkoutForm').style.display = 'none';
+      document.getElementById('orderSuccess').classList.add('visible');
+
+      // WhatsApp auto-confirmation (open in new tab)
+      const waMsg = encodeURIComponent(
+        `Salam ${fullName.value}, votre commande est confirmée ✅\n` +
+        `Coffret: ${currentProduct.name}\n` +
+        `Prix: ${currentProduct.price} MAD\n` +
+        `Livraison: ${city.value}\n` +
+        `Livraison sous 24-48h. Merci!`
+      );
+      // Uncomment to enable auto-WhatsApp:
+      // window.open(`https://wa.me/212XXXXXXXXX?text=${waMsg}`, '_blank');
+    }
+
+    // ── Page Load Tracking ──
+    window.addEventListener('DOMContentLoaded', () => {
+      if (typeof fbq === 'function') {
+        fbq('track', 'ViewContent', { content_name: 'LUXORA Landing Page' });
+      }
+      if (typeof ttq !== 'undefined') {
+        ttq.track('ViewContent', { content_name: 'LUXORA Landing Page' });
+      }
+    });
+
+    // ── Header scroll effect ──
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.style.boxShadow = '0 2px 16px rgba(0,0,0,0.08)';
+      } else {
+        header.style.boxShadow = 'none';
+      }
+    });
+  </script>
+
+  <!-- ═══════ META PIXEL (Replace YOUR_PIXEL_ID) ═══════ -->
+  <!--
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID');
+    fbq('track', 'PageView');
+  </script>
+  -->
+
+  <!-- ═══════ TIKTOK PIXEL (Replace YOUR_TIKTOK_PIXEL_ID) ═══════ -->
+  <!--
+  <script>
+    !function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=
+    ["page","track","identify","instances","debug","on","off","once","ready","alias",
+    "group","enableCookie","disableCookie"];ttq.setAndDefer=function(t,e){t[e]=function()
+    {t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;
+    i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t)
+    {for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);
+    return e};ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";
+    ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=i;ttq._t=ttq._t||{};ttq._t[e+
+    "_"+Date.now()]={};var o=document.createElement("script");o.type="text/javascript";
+    o.async=!0;o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];
+    a.parentNode.insertBefore(o,a)};ttq.load('YOUR_TIKTOK_PIXEL_ID');ttq.page();
+    }(window,document,'ttq');
+  </script>
+  -->
+
+</body>
+</html>
