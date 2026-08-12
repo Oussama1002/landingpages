@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STEPRA — Sacs & Chaussures Homme & Femme | Tendance & Qualité</title>
+  <meta name="description" content="Sacs, talons, sandales pour homme et femme. Livraison partout au Maroc 24-48h. Paiement à la livraison. Échange taille gratuit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{
+      --primary:#8B7D6B;--accent:#C4784A;--accent-hover:#b06a3f;
+      --secondary:#F2EDE7;--text:#2D2420;--text-light:#6B6058;--text-muted:#9A918A;
+      --bg:#FFFCF8;--white:#FFFFFF;
+      --shadow-sm:0 2px 8px rgba(0,0,0,0.06);--shadow-md:0 4px 20px rgba(0,0,0,0.1);
+      --radius:12px;--radius-sm:8px;--transition:0.3s cubic-bezier(.4,0,.2,1);
+    }
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    h1,h2,h3,h4,h5{font-family:'Poppins',sans-serif;font-weight:700;line-height:1.2}
+    img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{cursor:pointer;border:none;font-family:inherit}ul{list-style:none}
+
+    /* ── HEADER ── */
+    .header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,252,248,0.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,0.05);transition:var(--transition)}
+    .header-inner{max-width:1440px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-family:'Poppins',sans-serif;font-size:24px;font-weight:800;letter-spacing:2px;color:var(--text)}
+    .logo span{color:var(--accent)}
+    .header-icons{display:flex;align-items:center;gap:14px}
+    .header-icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:transparent;transition:var(--transition);font-size:20px;position:relative}
+    .header-icon:hover{background:var(--secondary)}
+    .cart-count{position:absolute;top:2px;right:2px;width:18px;height:18px;border-radius:50%;background:var(--accent);color:white;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center}
+
+    /* ── BUTTONS ── */
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:15px 30px;border-radius:50px;font-size:15px;font-weight:600;letter-spacing:.3px;transition:var(--transition);white-space:nowrap}
+    .btn-dark{background:var(--text);color:var(--white)}
+    .btn-dark:hover{background:#444;transform:translateY(-2px);box-shadow:var(--shadow-md)}
+    .btn-accent{background:var(--accent);color:var(--white)}
+    .btn-accent:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:var(--shadow-md)}
+    .btn-outline{background:transparent;border:2px solid rgba(255,255,255,.3);color:var(--white)}
+    .btn-outline:hover{border-color:var(--white);background:rgba(255,255,255,.1)}
+
+    /* ── HERO ── */
+    .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;padding:0 20px 40px;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;z-index:-1;background:linear-gradient(135deg,#3d3530 0%,#2D2420 50%,#4a3f35 100%)}
+    .hero-bg-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;color:rgba(255,255,255,.3);font-size:13px;text-align:center;padding:20px}
+    .hero-bg-placeholder .icon{font-size:48px}
+    .hero-content{max-width:1440px;margin:0 auto;width:100%;padding-top:120px;color:var(--white);text-align:center}
+    .hero-tagline{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--secondary);margin-bottom:14px;font-weight:500}
+    .hero h1{font-size:clamp(30px,7vw,60px);font-weight:800;margin-bottom:14px}
+    .hero h1 em{font-style:normal;color:var(--accent)}
+    .hero-sub{font-size:clamp(14px,2.5vw,18px);color:rgba(255,255,255,.8);max-width:550px;margin:0 auto 28px;font-weight:300}
+    .hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+    .trust-badges{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.7)}
+    .trust-badge{display:flex;align-items:center;gap:6px}
+
+    /* ── DUAL NAV: GENDER + CATEGORY ── */
+    .dual-nav{position:sticky;top:64px;z-index:900;background:var(--bg);border-bottom:1px solid rgba(0,0,0,.06)}
+    .gender-row{display:flex;justify-content:center;border-bottom:1px solid rgba(0,0,0,.04)}
+    .gender-tab{flex:1;max-width:180px;padding:14px 20px;font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;color:var(--text-light);background:transparent;border-bottom:3px solid transparent;transition:var(--transition);text-align:center}
+    .gender-tab:hover{color:var(--text)}
+    .gender-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+    .category-row{display:flex;justify-content:center;gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+    .category-row::-webkit-scrollbar{display:none}
+    .cat-tab{padding:12px 18px;font-size:13px;font-weight:600;color:var(--text-muted);background:transparent;white-space:nowrap;border-bottom:2px solid transparent;transition:var(--transition)}
+    .cat-tab:hover{color:var(--text)}
+    .cat-tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+
+    /* ── PRODUCT GRID ── */
+    .products-section{max-width:1440px;margin:0 auto;padding:32px 20px 60px}
+    .products-header{text-align:center;margin-bottom:28px}
+    .products-header h2{font-size:clamp(22px,4vw,34px)}
+    .stock-alert{display:inline-flex;align-items:center;gap:6px;background:#FFF3E0;color:#E65100;font-size:13px;font-weight:600;padding:8px 16px;border-radius:50px;margin-top:10px}
+    .product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .product-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:var(--transition);position:relative}
+    .product-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+    .product-card.hidden{display:none}
+    .product-image{position:relative;aspect-ratio:3/4;background:#f0ece7;overflow:hidden}
+    .product-image-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--text-muted);font-size:11px;text-align:center;padding:8px}
+    .product-image-placeholder .icon{font-size:36px}
+    .product-badge{position:absolute;top:8px;left:8px;background:#E53935;color:white;font-size:11px;font-weight:700;padding:4px 10px;border-radius:50px;z-index:2}
+    .product-badge.new{background:var(--accent)}
+    .product-badge.stock{background:#333}
+    .exchange-badge{position:absolute;bottom:8px;left:8px;background:rgba(255,255,255,.92);color:var(--text);font-size:10px;font-weight:600;padding:4px 8px;border-radius:50px;z-index:2}
+    .product-info{padding:12px}
+    .product-name{font-family:'Poppins',sans-serif;font-size:13px;font-weight:600;margin-bottom:4px;line-height:1.3}
+    .product-price{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+    .price-now{font-family:'Poppins',sans-serif;font-size:18px;font-weight:700;color:var(--accent)}
+    .price-was{font-size:13px;color:var(--text-muted);text-decoration:line-through}
+    .color-swatches{display:flex;gap:6px;margin-bottom:8px}
+    .swatch{width:20px;height:20px;border-radius:50%;border:2px solid transparent;cursor:pointer;transition:var(--transition)}
+    .swatch.active{border-color:var(--accent);box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--accent)}
+    .size-pills{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
+    .size-pill{padding:4px 10px;border-radius:50px;font-size:11px;font-weight:600;background:var(--secondary);color:var(--text);cursor:pointer;transition:var(--transition)}
+    .size-pill:hover{background:var(--accent);color:white}
+    .size-pill.active{background:var(--accent);color:white}
+    .size-pill.out{opacity:.4;cursor:not-allowed;text-decoration:line-through}
+    .size-range{font-size:11px;color:var(--text-muted);margin-bottom:8px}
+    .product-cta{width:100%;padding:11px;background:var(--accent);color:white;border-radius:var(--radius-sm);font-size:13px;font-weight:600;transition:var(--transition)}
+    .product-cta:hover{background:var(--accent-hover)}
+    .size-error{font-size:11px;color:#E53935;margin-top:4px;display:none}
+    .size-error.show{display:block}
+    .size-guide-link{font-size:11px;color:var(--accent);cursor:pointer;margin-bottom:8px;display:inline-block;font-weight:500}
+    .load-more-wrap{text-align:center;margin-top:28px}
+
+    /* ── SIZE GUIDE ── */
+    .size-guide-section{background:var(--white);padding:50px 20px;border-top:1px solid rgba(0,0,0,.04)}
+    .size-guide-inner{max-width:700px;margin:0 auto}
+    .size-guide-section h2{text-align:center;font-size:clamp(22px,4vw,32px);margin-bottom:8px}
+    .size-guide-sub{text-align:center;color:var(--text-light);margin-bottom:24px;font-size:14px}
+    .sg-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:24px}
+    .sg-tab{padding:10px 24px;border-radius:50px;font-size:14px;font-weight:600;background:var(--secondary);color:var(--text);cursor:pointer;transition:var(--transition)}
+    .sg-tab.active{background:var(--accent);color:white}
+    .sg-table-wrap{overflow-x:auto}
+    table.sg-table{width:100%;border-collapse:collapse;font-size:14px}
+    .sg-table th{background:var(--secondary);padding:12px 16px;text-align:left;font-weight:600;font-size:13px}
+    .sg-table td{padding:12px 16px;border-bottom:1px solid rgba(0,0,0,.05)}
+    .sg-table tr:hover td{background:rgba(196,120,74,.05)}
+    .sg-diagram{text-align:center;margin:24px 0;padding:24px;background:var(--secondary);border-radius:var(--radius);font-size:13px;color:var(--text-light)}
+    .sg-diagram .icon{font-size:48px;margin-bottom:8px}
+    .sg-tip{background:rgba(196,120,74,.08);padding:14px 18px;border-radius:var(--radius-sm);font-size:13px;color:var(--accent);font-weight:500;text-align:center;margin-top:16px}
+    .sg-ref{text-align:center;font-size:12px;color:var(--text-muted);margin-top:12px}
+    .sg-content{display:none}
+    .sg-content.active{display:block}
+
+    /* ── SIZE GUIDE MODAL ── */
+    .sg-modal-overlay{position:fixed;inset:0;z-index:2500;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center}
+    .sg-modal-overlay.open{display:flex}
+    .sg-modal{background:var(--white);width:90%;max-width:500px;max-height:80vh;border-radius:var(--radius);overflow-y:auto;padding:24px 20px}
+    .sg-modal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+    .sg-modal-header h3{font-size:18px}
+    .sg-modal-close{width:32px;height:32px;border-radius:50%;background:var(--secondary);display:flex;align-items:center;justify-content:center;font-size:16px}
+
+    /* ── FEATURED ── */
+    .featured{background:var(--secondary);padding:50px 20px}
+    .featured-inner{max-width:1200px;margin:0 auto}
+    .featured .section-label{text-align:center;font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--accent);margin-bottom:6px;font-weight:600}
+    .featured .section-title{text-align:center;font-size:clamp(22px,4vw,34px);margin-bottom:28px}
+    .featured-duo{display:grid;grid-template-columns:1fr;gap:24px}
+    .featured-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm)}
+    .featured-carousel{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0}
+    .featured-carousel::-webkit-scrollbar{display:none}
+    .f-slide{flex:0 0 100%;scroll-snap-align:start;aspect-ratio:3/4;background:#f0ece7}
+    .f-slide-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--text-muted);font-size:12px}
+    .f-slide-placeholder .icon{font-size:40px}
+    .featured-info{padding:20px}
+    .featured-info h3{font-size:18px;margin-bottom:4px}
+    .featured-oneliner{font-size:13px;color:var(--text-light);margin-bottom:12px}
+    .featured-specs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+    .f-spec{font-size:12px;color:var(--text-light);padding:5px 12px;background:var(--secondary);border-radius:50px}
+    .featured-sizes{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+    .f-size{padding:8px 14px;border-radius:50px;font-size:13px;font-weight:600;background:var(--secondary);color:var(--text);cursor:pointer;transition:var(--transition)}
+    .f-size:hover,.f-size.active{background:var(--accent);color:white}
+
+    /* ── BUNDLES ── */
+    .bundles-section{padding:50px 20px;max-width:1440px;margin:0 auto}
+    .bundles-section h2{text-align:center;font-size:clamp(22px,4vw,34px);margin-bottom:8px}
+    .bundles-sub{text-align:center;color:var(--text-light);margin-bottom:28px;font-size:14px}
+    .bundles-grid{display:grid;grid-template-columns:1fr;gap:16px}
+    .bundle-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+    .bundle-card.hidden{display:none}
+    .bundle-images{display:flex;gap:2px;aspect-ratio:2/1;background:#f0ece7}
+    .bundle-img-half{flex:1;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;color:var(--text-muted);font-size:11px;background:#f0ece7}
+    .bundle-img-half .icon{font-size:28px}
+    .bundle-info{padding:16px}
+    .bundle-name{font-family:'Poppins',sans-serif;font-size:15px;font-weight:600;margin-bottom:6px}
+    .bundle-price{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+    .bundle-savings{font-size:12px;font-weight:700;color:white;background:#E53935;padding:3px 10px;border-radius:50px}
+    .bundle-cta{width:100%;padding:12px;background:var(--accent);color:white;border-radius:var(--radius-sm);font-size:14px;font-weight:600;transition:var(--transition)}
+    .bundle-cta:hover{background:var(--accent-hover)}
+
+    /* ── REVIEWS ── */
+    .reviews-section{padding:50px 20px;background:var(--secondary)}
+    .reviews-inner{max-width:1440px;margin:0 auto}
+    .reviews-header{text-align:center;margin-bottom:28px}
+    .reviews-header h2{font-size:clamp(22px,4vw,34px);margin-bottom:8px}
+    .reviews-badge{display:inline-flex;align-items:center;gap:8px;background:var(--white);padding:8px 18px;border-radius:50px;box-shadow:var(--shadow-sm);font-size:14px;font-weight:600}
+    .reviews-grid{display:grid;grid-template-columns:1fr;gap:14px}
+    .review-card{background:var(--white);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow-sm)}
+    .review-top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+    .review-avatar{width:40px;height:40px;border-radius:50%;background:var(--secondary);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;color:var(--text)}
+    .review-meta{flex:1}
+    .review-name{font-weight:600;font-size:13px}
+    .review-city{font-size:11px;color:var(--text-light)}
+    .review-tag{font-size:10px;font-weight:600;padding:3px 8px;border-radius:50px}
+    .review-tag.h{background:rgba(45,36,32,.08);color:var(--text)}
+    .review-tag.f{background:rgba(196,120,74,.12);color:var(--accent)}
+    .review-stars{color:#F59E0B;font-size:13px;margin-bottom:6px;letter-spacing:2px}
+    .review-text{font-size:13px;line-height:1.6}
+
+    /* ── REASSURANCE ── */
+    .reassurance{padding:50px 20px;background:var(--white)}
+    .reassurance-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .reassurance-item{text-align:center;padding:18px 10px}
+    .reassurance-icon{font-size:30px;margin-bottom:10px}
+    .reassurance-title{font-family:'Poppins',sans-serif;font-size:14px;font-weight:700;margin-bottom:4px}
+    .reassurance-desc{font-size:12px;color:var(--text-light);line-height:1.5}
+    .reassurance-item.highlight{background:rgba(196,120,74,.06);border-radius:var(--radius);border:1px solid rgba(196,120,74,.15)}
+
+    /* ── UGC ── */
+    .ugc-section{padding:50px 20px;text-align:center}
+    .ugc-section h2{font-size:clamp(22px,4vw,34px);margin-bottom:6px}
+    .ugc-handle{color:var(--accent);font-weight:600;margin-bottom:20px;font-size:14px}
+    .ugc-masonry{columns:2;column-gap:10px;max-width:800px;margin:0 auto 24px}
+    .ugc-item{break-inside:avoid;margin-bottom:10px;border-radius:var(--radius-sm);overflow:hidden;background:#f0ece7}
+    .ugc-placeholder{padding:40px 16px;display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--text-muted);font-size:11px}
+    .ugc-placeholder .icon{font-size:28px}
+    .ugc-placeholder.tall{padding:60px 16px}
+    .ugc-socials{display:flex;gap:14px;justify-content:center}
+    .ugc-social{display:flex;align-items:center;gap:6px;padding:10px 18px;border-radius:50px;font-size:13px;font-weight:600;color:white}
+    .ugc-social.ig{background:linear-gradient(135deg,#833AB4,#E1306C,#F77737)}
+    .ugc-social.tt{background:#000}
+
+    /* ── FAQ ── */
+    .faq-section{padding:50px 20px;background:var(--secondary)}
+    .faq-inner{max-width:700px;margin:0 auto}
+    .faq-section h2{text-align:center;font-size:clamp(22px,4vw,34px);margin-bottom:28px}
+    .faq-item{border-bottom:1px solid rgba(0,0,0,.06);background:var(--white);margin-bottom:8px;border-radius:var(--radius-sm);overflow:hidden}
+    .faq-q{width:100%;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;background:transparent;font-size:14px;font-weight:600;color:var(--text);text-align:left;gap:12px}
+    .faq-icon{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--secondary);display:flex;align-items:center;justify-content:center;font-size:16px;transition:var(--transition);color:var(--accent)}
+    .faq-item.open .faq-icon{transform:rotate(45deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+    .faq-a-inner{padding:0 18px 16px;font-size:13px;color:var(--text-light);line-height:1.7}
+    .faq-item.open .faq-a{max-height:200px}
+
+    /* ── FINAL CTA ── */
+    .final-cta{background:var(--primary);color:var(--white);padding:50px 20px;text-align:center}
+    .final-cta h2{font-size:clamp(26px,5vw,42px);margin-bottom:6px}
+    .final-cta-sub{color:rgba(255,255,255,.6);margin-bottom:24px;font-size:14px}
+    .final-cta .hero-ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+    .final-trust{font-size:12px;color:rgba(255,255,255,.5)}
+
+    /* ── FOOTER ── */
+    .footer{background:#1e1a17;color:rgba(255,255,255,.5);padding:36px 20px;text-align:center}
+    .footer-logo{font-family:'Poppins',sans-serif;font-size:20px;font-weight:800;letter-spacing:2px;color:var(--white);margin-bottom:16px}
+    .footer-logo span{color:var(--accent)}
+    .footer-links{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;margin-bottom:20px;font-size:12px}
+    .footer-links a:hover{color:var(--white)}
+    .footer-socials{display:flex;gap:14px;justify-content:center;margin-bottom:20px;font-size:20px}
+    .footer-trust-row{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;font-size:11px;margin-bottom:16px}
+    .footer-copy{font-size:11px;color:rgba(255,255,255,.3)}
+
+    /* ── WHATSAPP ── */
+    .wa-float{position:fixed;bottom:24px;right:24px;z-index:999;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,.4);transition:var(--transition);font-size:28px;color:white}
+    .wa-float:hover{transform:scale(1.1)}
+
+    /* ── STICKY MOBILE CTA ── */
+    .sticky-bar{position:fixed;bottom:0;left:0;right:0;z-index:998;background:var(--white);border-top:1px solid rgba(0,0,0,.08);padding:10px 14px;display:none;align-items:center;gap:10px;box-shadow:0 -4px 20px rgba(0,0,0,.08)}
+    .sticky-bar.visible{display:flex}
+    .sticky-left{flex:1;min-width:0}
+    .sticky-name{font-family:'Poppins',sans-serif;font-size:12px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .sticky-price{font-size:15px;font-weight:700;color:var(--accent)}
+    .sticky-size{font-size:11px;color:var(--text-light)}
+    .sticky-btn{padding:12px 20px;background:var(--accent);color:white;border-radius:50px;font-size:13px;font-weight:600;white-space:nowrap;flex-shrink:0}
+
+    /* ── CHECKOUT MODAL ── */
+    .checkout-overlay{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.5);backdrop-filter:blur(4px);display:none;align-items:flex-end;justify-content:center}
+    .checkout-overlay.open{display:flex}
+    .checkout-modal{background:var(--white);width:100%;max-width:500px;max-height:90vh;border-radius:20px 20px 0 0;overflow-y:auto;padding:24px 20px 40px;animation:slideUp .3s ease}
+    @keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+    .ck-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+    .ck-header h3{font-size:18px}
+    .ck-close{width:34px;height:34px;border-radius:50%;background:var(--secondary);display:flex;align-items:center;justify-content:center;font-size:16px}
+    .ck-product{display:flex;gap:12px;padding:14px;background:var(--secondary);border-radius:var(--radius);margin-bottom:20px}
+    .ck-product-img{width:65px;height:65px;border-radius:var(--radius-sm);background:#f0ece7;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:26px}
+    .ck-product-info{flex:1}
+    .ck-product-name{font-weight:600;font-size:13px;margin-bottom:2px}
+    .ck-product-detail{font-size:11px;color:var(--text-light);margin-bottom:2px}
+    .ck-product-price{font-weight:700;color:var(--accent)}
+    .ck-sg-link{font-size:12px;color:var(--accent);font-weight:500;cursor:pointer;margin-bottom:16px;display:none}
+    .ck-sg-link.show{display:block}
+    .form-group{margin-bottom:14px}
+    .form-label{display:block;font-size:12px;font-weight:600;margin-bottom:5px}
+    .form-label .opt{font-weight:400;color:var(--text-muted)}
+    .form-input{width:100%;padding:13px 14px;border:1.5px solid rgba(0,0,0,.1);border-radius:var(--radius-sm);font-size:14px;font-family:inherit;transition:var(--transition);background:var(--white);color:var(--text)}
+    .form-input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(196,120,74,.15)}
+    .form-input.error{border-color:#E53935}
+    .form-error{font-size:11px;color:#E53935;margin-top:3px;display:none}
+    .form-input.error~.form-error{display:block}
+    select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%236B6058' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+    .phone-wrap{display:flex;gap:8px}
+    .phone-prefix{padding:13px 10px;background:var(--secondary);border:1.5px solid rgba(0,0,0,.1);border-radius:var(--radius-sm);font-size:14px;font-weight:600;flex-shrink:0}
+    .wa-badge{display:flex;align-items:center;gap:8px;padding:10px 14px;background:rgba(37,211,102,.08);border-radius:var(--radius-sm);font-size:12px;color:#128C7E;font-weight:500;margin-bottom:16px}
+    .exchange-badge-ck{display:none;align-items:center;gap:8px;padding:10px 14px;background:rgba(196,120,74,.08);border-radius:var(--radius-sm);font-size:12px;color:var(--accent);font-weight:500;margin-bottom:12px}
+    .exchange-badge-ck.show{display:flex}
+    .ck-submit{width:100%;padding:15px;background:var(--accent);color:white;border-radius:var(--radius-sm);font-size:15px;font-weight:700;transition:var(--transition);margin-bottom:10px}
+    .ck-submit:hover{background:var(--accent-hover)}
+    .ck-trust{text-align:center;font-size:11px;color:var(--text-muted)}
+    .order-success{text-align:center;padding:40px 20px;display:none}
+    .order-success.visible{display:block}
+    .order-success .icon{font-size:56px;margin-bottom:14px}
+    .order-success h3{font-size:20px;margin-bottom:6px}
+    .order-success p{color:var(--text-light);font-size:13px;margin-bottom:6px}
+
+    /* ── DESKTOP ── */
+    @media(min-width:768px){
+      .header-inner{padding:14px 40px}
+      .hero{align-items:center;padding:0 60px}.hero-content{text-align:left;max-width:580px;padding-top:0}
+      .hero-ctas,.trust-badges{justify-content:flex-start}
+      .dual-nav{top:60px}
+      .product-grid{grid-template-columns:repeat(3,1fr);gap:20px}
+      .featured-duo{grid-template-columns:repeat(2,1fr)}
+      .bundles-grid{grid-template-columns:repeat(2,1fr)}
+      .reviews-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+      .reassurance-grid{grid-template-columns:repeat(4,1fr)}
+      .ugc-masonry{columns:3}
+      .checkout-overlay{align-items:center}.checkout-modal{border-radius:var(--radius);max-height:85vh}
+      .sticky-bar{display:none!important}
+      .wa-float{bottom:32px;right:32px}
+    }
+    @media(min-width:1024px){
+      .product-grid{grid-template-columns:repeat(4,1fr)}
+      .reviews-grid{grid-template-columns:repeat(3,1fr)}
+      .ugc-masonry{columns:4}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <div class="logo">STEP<span>RA</span></div>
+    <div class="header-icons">
+      <a href="https://wa.me/212XXXXXXXXX?text=Salam%2C%20je%20voudrais%20des%20infos" class="header-icon" aria-label="WhatsApp">💬</a>
+      <button class="header-icon" aria-label="Panier">🛒<span class="cart-count" id="cartCount" style="display:none">0</span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="hero-bg-placeholder">
+      <span class="icon">📸</span>
+      <span>[REPLACE: Split lifestyle — man with sacoche (left) + woman with sac à main & heels (right). Urban Moroccan backdrop, natural light. 1920x1080 min, WebP]</span>
+    </div>
+  </div>
+  <div class="hero-content">
+    <p class="hero-tagline">Le style pour tous</p>
+    <h1>Votre Prochain <em>Coup de Cœur</em></h1>
+    <p class="hero-sub">Sacs & chaussures tendance pour homme et femme — livrés chez vous en 24-48h</p>
+    <div class="hero-ctas">
+      <a href="#products" class="btn btn-dark" data-gender="homme">Shop Homme</a>
+      <a href="#products" class="btn btn-accent" data-gender="femme">Shop Femme ✨</a>
+    </div>
+    <div class="trust-badges">
+      <span class="trust-badge">🚚 Livraison partout au Maroc</span>
+      <span class="trust-badge">💵 Paiement à la livraison</span>
+      <span class="trust-badge">🔄 Échange taille gratuit</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DUAL NAV ═══ -->
+<div class="dual-nav" id="dualNav">
+  <div class="gender-row" id="genderRow">
+    <button class="gender-tab active" data-gender="homme">👨 HOMME</button>
+    <button class="gender-tab" data-gender="femme">👩 FEMME</button>
+  </div>
+  <div class="category-row" id="categoryRow">
+    <!-- Homme categories (default) -->
+    <button class="cat-tab active" data-cat="sacoches">Sacoches</button>
+    <button class="cat-tab" data-cat="sacs-a-dos">Sacs à Dos</button>
+    <button class="cat-tab" data-cat="sandales-h">Sandales</button>
+    <button class="cat-tab" data-cat="mocassins">Mocassins</button>
+  </div>
+</div>
+
+<!-- ═══ PRODUCT GRID ═══ -->
+<section class="products-section" id="products">
+  <div class="products-header">
+    <h2 id="productsTitle">Sacoches Homme</h2>
+    <div class="stock-alert">⚡ Stock limité — <span id="stockCount">17</span> pièces restantes</div>
+  </div>
+
+  <div class="product-grid" id="productGrid">
+
+    <!-- ── HOMME: SACOCHES ── -->
+    <div class="product-card" data-gender="homme" data-cat="sacoches" data-name="Sacoche Urban — Noir" data-price="279" data-type="bag">
+      <div class="product-image">
+        <span class="product-badge">🔥 Tendance</span>
+        <div class="product-image-placeholder"><span class="icon">👜</span><span>[Homme portant sacoche noire en bandoulière, rue urbaine]</span></div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Sacoche Urban — Noir</h3>
+        <div class="product-price"><span class="price-now">279 MAD</span><span class="price-was">399 MAD</span></div>
+        <div class="color-swatches">
+          <span class="swatch active" style="background:#222" title="Noir"></span>
+          <span class="swatch" style="background:#5C4033" title="Marron"></span>
+          <span class="swatch" style="background:#8B7D6B" title="Taupe"></span>
+        </div>
+        <button class="product-cta" onclick="addToCart(this)">Ajouter 🛒</button>
+      </div>
+    </div>
+
+    <div class="product-card" data-gender="homme" data-cat="sacoches" data-name="Sacoche Prestige — Marron" data-price="319" data-type="bag">
+      <div class="product-image">
+        <span class="product-badge new">✨ Nouveau</span>
+        <div class="product-image-placeholder"><span class="icon">👜</span><span>[Sacoche marron cuir, portée casual]</span></div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Sacoche Prestige — Marron</h3>
+        <div class="product-price"><span class="price-now">319 MAD</span><span class="price-was">449 MAD</span></div>
+        <div class="color-swatches">
+          <span class="swatch active" style="background:#5C4033" title="Marron"></span>
+          <span class="swatch" style="background:#222" title="Noir"></span>
+        </div>
+        <button class="product-cta" onclick="addToCart(this)">Ajouter 🛒</button>
+      </div>
+    </div>
+
+    <!-- ── HOMME: SACS A DOS ── -->
+    <div class="product-card hidden" data-gender="homme" data-cat="sacs-a-dos" data-name="Sac à Dos Explorer — Noir" data-price="349" data-type="bag">
+      <div class="product-image">
+        <div class="product-image-placeholder"><span class="icon">🎒</span><span>[Homme avec sac à dos noir, look urbain]</span></div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Sac à Dos Explorer — Noir</h3>
+        <div class="product-price"><span class="price-now">349 MAD</span><span class="price-was">499 MAD</span></div>
+        <div class="color-swatches">
+          <span class="swatch active" style="background:#222" title="Noir"></span>
+          <span class="swatch" style="background:#4a5568" title="Gris"></span>
+        </div>
+        <button class="product-cta" onclick="addToCart(this)">Ajouter 🛒</button>
+      </div>
+    </div>
+
+    <div class="product-card hidden" data-gender="homme" data-cat="sacs-a-dos" data-name="Sac à Dos Daily — Gris" data-price="299" data-type="bag">
+      <div class="product-image">
+        <span class="product-badge">🔥 Tendance</span>
+        <div class="product-image-placeholder"><span class="icon">🎒</span><span>[Sac à dos gris, style minimaliste]</span></div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Sac à Dos Daily — Gris</h3>
+        <div class="product-price"><span class="price-now">299 MAD</span><span class="price-was">429 MAD</span></div>
+        <button class="product-cta" onclick="addToCart(this)">Ajouter 🛒</button>
+      </div>
+    </div>
+
+    <!-- ── HOMME: SANDALES ── -->
+    <div class="product-card hidden" data-gender="homme" data-cat="sandales-h" data-name="Sandale Atlas — Marron" data-price="249" data-type="shoe" data-sizes="40,41,42,43,44,45">
+      <div class="product-image">
+        <span class="exchange-badge">🔄 Échange taille gratuit</span>
+        <div class="product-image-placeholder"><span class="icon">🩴</span><span>[Sandales marron homme, portées en extérieur]</span></div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Sandale Atlas — Marron</h3>
+        <div class="product-price"><span class="price-now">249 MAD</span><span class="price-was">379 MAD</span></div>
+        <div class="size-pills" data-sizes="40,41,42,43,44,45">
+          <span class="size-pill" data-size="40">40</span><span class="size-pill" data-size="41">41</span><span class="size-pill" data-size="42">42</span><span class="size-pill" data-size="43">43</span><span class="size-pill" data-size="44">44</span><span class="size-pill" data-size="45">45</span>
+        </div>
+        <span class="size-guide-link" onclick="openSizeGuide('homme')">📏 Guide des tailles</span>
+        <button class="product-cta" onclick="addToCart(this)">Ajouter 🛒</button>
+        <div class="size-error">Veuillez choisir votre pointure</div>
+      </div>
+    </div>
+
+    <div class="product-card hidden" data-gender="homme" data-cat="sandales-h" data-name="Sandale Rif — Noir" data-price="229" data-type="shoe" data-sizes="40,41,42,43,44,45">
+      <div class="product-image">
+        <span class="exchange-badge">🔄 Échange taille gratuit</span>
+        <div class="product-image-placeholder"><span class="icon">🩴</span><span>[Sandales noires homme casual]</span></div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Sandale Rif — Noir</h3>
+        <div class="product-price"><span class="price-now">229 MAD</span><span class="price-was">349 MAD</span></div>
+        <div class="size-pills">
+          <span class="size-pill" data-size="40">40</span><span class="size-pill" data-size="41">41</span><span class="size-pill" data-size="42">42</span><span class="size-pill" data-size="43">43</span><span class="size-pill" data-size="44">44</span><span class="size-pill" data-size="45">45</span>
+        </div>
+        <span class="size-guide-link" onclick="openSizeGuide('homme')">📏 Guide des tailles</span>
+        <button class="product-cta" onclick="addToCart(this)">Ajouter 🛒</button>
+        <div class="size-error">Veuillez choisir votre pointure</div>
+      </div>
+    </div>
+
+    <!-- ── HOMME: MOCASSINS ── -->
+    <div class="product-card hidden" data-gender="homme" data-cat="mocassins" data-name="Mocassin Classic — Noir" data-price="289" data-type="shoe" data-sizes="40,41,42,43,44,45">
+      <div class="product-image">
+        <span class="exchange-badge">🔄 Échange taille gratuit</span>
+        <div class="product-image-placeholder"><span class="icon">👞</span><span>[Mocassins noirs homme, look smart casual]</span></div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Mocassin Classic — Noir</h3>
+        <div class="product-price"><span class="price-now">289 MAD</span><span class="price-was">419 MAD</span></div>
+        <div class="size-pills">
+          <span class="size-pill" data-size="40">40</span><span class="size-pill" data-size="41">41</span><span class="size-pill" data-size="42">42</span><span class="size-pill" data-size="43">43</span><span class="size-pill" data-size="44">44</span><span class="size-pill" data-size="45">45</span>
+        </div>
+        <span class="size-guide-link" onclick="openSizeGuide('homme')">📏 Guide des tailles</span>
+        <button class="product-cta" onclick="addToCart(this)">Ajouter 🛒</button>
+        <div class="size-error">Veuillez choisir votre pointure</div>
+      </div>
+    </div>
+
+    <div class="product-card hidden" data-gender="homme" data-cat="mocassins" data-name="Mocassin Élégant — Marron" data-price="299" data-type="shoe" data-sizes="40,41,42,43,44,45">
+      <div class="product-image">
+        <span class="product-badge new">✨ Nouveau</span>
+        <span class="exchange-badge">🔄 Échange taille gratuit</span>
+        <div class="product-image-placeholder"><span class="icon">👞</span><span>[Mocassins marron, cuir premium]</span></div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Mocassin Élégant — Marron</h3>
+        <div class="product-price"><span class="price-now">299 MAD</span><span class="price-was">429 MAD</span></div>
+        <div class="size-pills">
+          <span class="size-pill" data-size="40">40</span><span class="size-pill" data-size="41">41</span><span class="size-pill" data-size="42">42</span><span class="size-pill" data-size="43">43</span><span class="size-pill" data-size="44">44</span><span class="size-pill" data-size="45">45</span>
+        </div>
+        <span class="size-guide-link" onclick="openSizeGuide('homme')">📏 Guide des tailles</span>
+        <button class="product-cta" onclick="addToCart(this)">Ajouter 🛒</button>
+        <div class="size-error">Veuillez choisir votre pointure</div>
+      </div>
+    </div>
+
+    <!-- ═══ FEMME: SACS A MAIN ═══ -->
+    <div class="product-card hidden" data-gender="femme" data-cat="sacs-a-main" data-name="Sac Luna — Camel" data-price="329" data-type="bag">
+      <div class="product-image">
+        <span class="product-badge">🔥 Tendance</span>
+        <div class="product-image-placeholder"><span class="icon">👜</span><span>[Femme portant sac camel, street style]</span></div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Sac Luna — Camel</h3>
+        <div class="product-price"><span class="price-now">329 MAD</span><span class="price-was">469 MAD</span></div>
+        <div class="color-swatches">
+          <span class="swatch active" style="background:#C4784A" title="Camel"></span>
+          <span class="swatch" style="background:#222" title="Noir"></span>
+          <span class="swatch" style="background:#F2EDE7" title="Beige"></span>
+        </div>
+        <button class="product-cta" onclick="addToCart(this)">Ajouter 🛒</button>
+      </div>
+    </div>
+
+    <div class="product-card hidden" data-gender="femme" data-cat="sacs-a-main" data-name="Sac Nadia — Noir" data-price="349" data-type="bag">
+      <div class="product-image">
+        <span class="product-badge new">✨ Nouveau</span>
+        <div class="product-image-placeholder"><span class="icon">👜</span><span>[Sac noir structuré, look chic]</span></div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Sac Nadia — Noir</h3>
+        <div class="product-price"><span class="price-now">349 MAD</span><span class="price-was">499 MAD</span></div>
+        <div class="color-swatches">
+          <span class="swatch active" style="background:#222" title="Noir"></span>
+          <span class="swatch" style="background:#C4784A" title="Camel"></span>
+        </div>
+        <button class="product-cta" onclick="addToCart(this)">Ajouter 🛒</button>
+      </div>
+    </div>
+
+    <!-- ── FEMME: POCHETTES ── -->
+    <div class="product-card hidden" data-gender="femme" data-cat="pochettes" data-name="Pochette Éclat — Gold" data-price="199" data-type="bag">
+      <div class="product-image">
+        <div class="product-image-placeholder"><span class="icon">👛</span><span>[Pochette dorée, tenue soirée]</span></div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Pochette Éclat — Gold</h3>
+        <div class="product-price"><span class="price-now">199 MAD</span><span class="price-was">299 MAD</span></div>
+        <div class="color-swatches">
+          <span class="swatch active" style="background:#D4AF37" title="Gold"></span>
+          <span class="swatch" style="background:#C0C0C0" title="Silver"></span>
+          <span class="swatch" style="background:#222" title="Noir"></span>
+        </div>
+        <button class="product-cta" onclick="addToCart(this)">Ajouter 🛒</button>
+      </div>
+    </div>
+
+    <div class="product-card hidden" data-gender="femme" data-cat="pochettes" data-name="Clutch Minimal — Beige" data-price="179" data-type="bag">
+      <div class="product-image">
+        <div class="product-image-placeholder"><span class="icon">👛</span><span>[Clutch beige minimaliste]</span></div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Clutch Minimal — Beige</h3>
+        <div class="product-price"><span class="price-now">179 MAD</span><span class="price-was">269 MAD</span></div>
+        <button class="product-cta" onclick="addToCart(this)">Ajouter 🛒</button>
+      </div>
+    </div>
+
+    <!-- ── FEMME: TALONS ── -->
+    <div class="product-card hidden" data-gender="femme" data-cat="talons" data-name="Talon Amira — Beige" data-price="299" data-type="shoe" data-sizes="36,37,38,39,40,41">
+      <div class="product-image">
+        <span class="product-badge">🔥 Tendance</span>
+        <span class="exchange-badge">🔄 Échange taille gratuit</span>
+        <div class="product-image-placeholder"><span class="icon">👠</span><span>[Talons beige portés, look élégant]</span></div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Talon Amira — Beige</h3>
+        <div class="product-price"><span class="price-now">299 MAD</span><span class="price-was">429 MAD</span></div>
+        <div class="size-pills">
+          <span class="size-pill" data-size="36">36</span><span class="size-pill" data-size="37">37</span><span class="size-pill" data-size="38">38</span><span class="size-pill" data-size="39">39</span><span class="size-pill" data-size="40">40</span><span class="size-pill" data-size="41">41</span>
+        </div>
+        <span class="size-guide-link" onclick="openSizeGuide('femme')">📏 Guide des tailles</span>
+        <button class="product-cta" onclick="addToCart(this)">Ajouter 🛒</button>
+        <div class="size-error">Veuillez choisir votre pointure</div>
+      </div>
+    </div>
+
+    <div class="product-card hidden" data-gender="femme" data-cat="talons" data-name="Talon Selma — Noir" data-price="319" data-type="shoe" data-sizes="36,37,38,39,40,41">
+      <div class="product-image">
+        <span class="exchange-badge">🔄 Échange taille gratuit</span>
+        <div class="product-image-placeholder"><span class="icon">👠</span><span>[Talons noirs, look soirée]</span></div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Talon Selma — Noir</h3>
+        <div class="product-price"><span class="price-now">319 MAD</span><span class="price-was">449 MAD</span></div>
+        <div class="size-pills">
+          <span class="size-pill" data-size="36">36</span><span class="size-pill" data-size="37">37</span><span class="size-pill" data-size="38">38</span><span class="size-pill" data-size="39">39</span><span class="size-pill" data-size="40">40</span><span class="size-pill" data-size="41">41</span>
+        </div>
+        <span class="size-guide-link" onclick="openSizeGuide('femme')">📏 Guide des tailles</span>
+        <button class="product-cta" onclick="addToCart(this)">Ajouter 🛒</button>
+        <div class="size-error">Veuillez choisir votre pointure</div>
+      </div>
+    </div>
+
+    <!-- ── FEMME: SANDALES ── -->
+    <div class="product-card hidden" data-gender="femme" data-cat="sandales-f" data-name="Sandale Yasmine — Camel" data-price="239" data-type="shoe" data-sizes="36,37,38,39,40,41">
+      <div class="product-image">
+        <span class="exchange-badge">🔄 Échange taille gratuit</span>
+        <div class="product-image-placeholder"><span class="icon">👡</span><span>[Sandales plates camel, look été]</span></div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Sandale Yasmine — Camel</h3>
+        <div class="product-price"><span class="price-now">239 MAD</span><span class="price-was">349 MAD</span></div>
+        <div class="size-pills">
+          <span class="size-pill" data-size="36">36</span><span class="size-pill" data-size="37">37</span><span class="size-pill" data-size="38">38</span><span class="size-pill" data-size="39">39</span><span class="size-pill" data-size="40">40</span><span class="size-pill" data-size="41">41</span>
+        </div>
+        <span class="size-guide-link" onclick="openSizeGuide('femme')">📏 Guide des tailles</span>
+        <button class="product-cta" onclick="addToCart(this)">Ajouter 🛒</button>
+        <div class="size-error">Veuillez choisir votre pointure</div>
+      </div>
+    </div>
+
+    <div class="product-card hidden" data-gender="femme" data-cat="sandales-f" data-name="Sandale Nour — Noir" data-price="219" data-type="shoe" data-sizes="36,37,38,39,40,41">
+      <div class="product-image">
+        <span class="product-badge stock">⚡ Dernier stock</span>
+        <span class="exchange-badge">🔄 Échange taille gratuit</span>
+        <div class="product-image-placeholder"><span class="icon">👡</span><span>[Sandales noires femme, look casual chic]</span></div>
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">Sandale Nour — Noir</h3>
+        <div class="product-price"><span class="price-now">219 MAD</span><span class="price-was">329 MAD</span></div>
+        <div class="size-pills">
+          <span class="size-pill" data-size="36">36</span><span class="size-pill" data-size="37">37</span><span class="size-pill" data-size="38">38</span><span class="size-pill" data-size="39">39</span><span class="size-pill" data-size="40">40</span><span class="size-pill out" data-size="41">41</span>
+        </div>
+        <span class="size-guide-link" onclick="openSizeGuide('femme')">📏 Guide des tailles</span>
+        <button class="product-cta" onclick="addToCart(this)">Ajouter 🛒</button>
+        <div class="size-error">Veuillez choisir votre pointure</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ SIZE GUIDE ═══ -->
+<section class="size-guide-section" id="sizeGuide">
+  <div class="size-guide-inner">
+    <h2>Guide des Tailles 📏</h2>
+    <p class="size-guide-sub">Trouvez votre pointure parfaite en quelques secondes</p>
+
+    <div class="sg-tabs">
+      <button class="sg-tab active" data-sgtab="homme" onclick="switchSizeGuide('homme')">Homme</button>
+      <button class="sg-tab" data-sgtab="femme" onclick="switchSizeGuide('femme')">Femme</button>
+    </div>
+
+    <div class="sg-content active" id="sgHomme">
+      <div class="sg-table-wrap">
+        <table class="sg-table">
+          <thead><tr><th>Taille EU</th><th>Longueur du pied</th></tr></thead>
+          <tbody>
+            <tr><td>40</td><td>25.5 cm</td></tr>
+            <tr><td>41</td><td>26.0 cm</td></tr>
+            <tr><td>42</td><td>26.5 cm</td></tr>
+            <tr><td>43</td><td>27.0 cm</td></tr>
+            <tr><td>44</td><td>27.5 cm</td></tr>
+            <tr><td>45</td><td>28.0 cm</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="sg-content" id="sgFemme">
+      <div class="sg-table-wrap">
+        <table class="sg-table">
+          <thead><tr><th>Taille EU</th><th>Longueur du pied</th></tr></thead>
+          <tbody>
+            <tr><td>36</td><td>23.0 cm</td></tr>
+            <tr><td>37</td><td>23.5 cm</td></tr>
+            <tr><td>38</td><td>24.0 cm</td></tr>
+            <tr><td>39</td><td>24.5 cm</td></tr>
+            <tr><td>40</td><td>25.0 cm</td></tr>
+            <tr><td>41</td><td>25.5 cm</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="sg-diagram">
+      <div class="icon">🦶</div>
+      <strong>Comment mesurer ?</strong><br>
+      Posez votre pied sur une feuille de papier, tracez le contour, puis mesurez la distance du talon à l'orteil le plus long.
+    </div>
+
+    <div class="sg-tip">💡 Entre deux tailles ? Prenez toujours la taille au-dessus.</div>
+    <p class="sg-ref">Nos tailles correspondent aux tailles Zara / H&M / LC Waikiki</p>
+  </div>
+</section>
+
+<!-- ═══ SIZE GUIDE MODAL ═══ -->
+<div class="sg-modal-overlay" id="sgModal">
+  <div class="sg-modal">
+    <div class="sg-modal-header">
+      <h3>Guide des Tailles</h3>
+      <button class="sg-modal-close" onclick="closeSizeGuide()">&times;</button>
+    </div>
+    <div id="sgModalContent"></div>
+  </div>
+</div>
+
+<!-- ═══ FEATURED ═══ -->
+<section class="featured">
+  <div class="featured-inner">
+    <p class="section-label">Tendance du Moment</p>
+    <h2 class="section-title">Les Pièces Stars</h2>
+
+    <div class="featured-duo">
+      <div class="featured-card">
+        <div class="featured-carousel">
+          <div class="f-slide"><div class="f-slide-placeholder"><span class="icon">👜</span><span>Sacoche Urban — face</span></div></div>
+          <div class="f-slide"><div class="f-slide-placeholder"><span class="icon">📸</span><span>Sur homme — street</span></div></div>
+          <div class="f-slide"><div class="f-slide-placeholder"><span class="icon">📸</span><span>Détail cuir</span></div></div>
+          <div class="f-slide"><div class="f-slide-placeholder"><span class="icon">📸</span><span>Intérieur compartiments</span></div></div>
+        </div>
+        <div class="featured-info">
+          <h3>Sacoche Urban — Noir</h3>
+          <p class="featured-oneliner">La sacoche la plus vendue — déjà 200+ adoptée</p>
+          <div class="featured-specs">
+            <span class="f-spec">Cuir synthétique premium</span>
+            <span class="f-spec">22 × 18 × 6 cm</span>
+            <span class="f-spec">3 compartiments</span>
+            <span class="f-spec">Bandoulière ajustable</span>
+          </div>
+          <button class="btn btn-accent" onclick="openCheckoutDirect('Sacoche Urban — Noir','279','bag','')">Commander — 279 MAD</button>
+        </div>
+      </div>
+
+      <div class="featured-card">
+        <div class="featured-carousel">
+          <div class="f-slide"><div class="f-slide-placeholder"><span class="icon">👠</span><span>Talon Amira — face</span></div></div>
+          <div class="f-slide"><div class="f-slide-placeholder"><span class="icon">📸</span><span>Portés — look chic</span></div></div>
+          <div class="f-slide"><div class="f-slide-placeholder"><span class="icon">📸</span><span>Détail talon</span></div></div>
+          <div class="f-slide"><div class="f-slide-placeholder"><span class="icon">📸</span><span>Vue de côté</span></div></div>
+        </div>
+        <div class="featured-info">
+          <h3>Talon Amira — Beige</h3>
+          <p class="featured-oneliner">Confort + élégance — le talon qui ne fait pas mal</p>
+          <div class="featured-specs">
+            <span class="f-spec">Cuir véritable</span>
+            <span class="f-spec">Hauteur talon : 7 cm</span>
+            <span class="f-spec">Semelle intérieure rembourrée</span>
+          </div>
+          <div class="featured-sizes">
+            <span class="f-size" data-size="36">36</span><span class="f-size" data-size="37">37</span><span class="f-size" data-size="38">38</span><span class="f-size" data-size="39">39</span><span class="f-size" data-size="40">40</span><span class="f-size" data-size="41">41</span>
+          </div>
+          <button class="btn btn-accent" onclick="openCheckoutDirect('Talon Amira — Beige','299','shoe','')">Commander — 299 MAD</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BUNDLES ═══ -->
+<section class="bundles-section" id="bundles">
+  <h2>Complétez Votre Look ✨</h2>
+  <p class="bundles-sub">Des combos irrésistibles à prix réduit</p>
+
+  <div class="bundles-grid" id="bundlesGrid">
+
+    <div class="bundle-card" data-bundle-gender="femme">
+      <div class="bundle-images">
+        <div class="bundle-img-half"><span class="icon">👜</span><span>Sac Luna</span></div>
+        <div class="bundle-img-half"><span class="icon">👛</span><span>Pochette Éclat</span></div>
+      </div>
+      <div class="bundle-info">
+        <h3 class="bundle-name">Sac à Main + Pochette</h3>
+        <div class="bundle-price">
+          <span class="price-now">449 MAD</span>
+          <span class="price-was">528 MAD</span>
+          <span class="bundle-savings">-15%</span>
+        </div>
+        <button class="bundle-cta" onclick="openCheckoutDirect('Bundle Sac + Pochette','449','bag','')">Prendre le Bundle</button>
+      </div>
+    </div>
+
+    <div class="bundle-card" data-bundle-gender="femme">
+      <div class="bundle-images">
+        <div class="bundle-img-half"><span class="icon">👜</span><span>Sac Nadia</span></div>
+        <div class="bundle-img-half"><span class="icon">👠</span><span>Talon Amira</span></div>
+      </div>
+      <div class="bundle-info">
+        <h3 class="bundle-name">Sac + Talons Assortis</h3>
+        <div class="bundle-price">
+          <span class="price-now">499 MAD</span>
+          <span class="price-was">648 MAD</span>
+          <span class="bundle-savings">-23%</span>
+        </div>
+        <button class="bundle-cta" onclick="openCheckoutDirect('Bundle Sac + Talons','499','shoe','')">Prendre le Bundle</button>
+      </div>
+    </div>
+
+    <div class="bundle-card" data-bundle-gender="homme">
+      <div class="bundle-images">
+        <div class="bundle-img-half"><span class="icon">👜</span><span>Sacoche Urban</span></div>
+        <div class="bundle-img-half"><span class="icon">🩴</span><span>Sandale Atlas</span></div>
+      </div>
+      <div class="bundle-info">
+        <h3 class="bundle-name">Sacoche + Sandales</h3>
+        <div class="bundle-price">
+          <span class="price-now">429 MAD</span>
+          <span class="price-was">528 MAD</span>
+          <span class="bundle-savings">-19%</span>
+        </div>
+        <button class="bundle-cta" onclick="openCheckoutDirect('Bundle Sacoche + Sandales','429','shoe','')">Prendre le Bundle</button>
+      </div>
+    </div>
+
+    <div class="bundle-card" data-bundle-gender="all">
+      <div class="bundle-images">
+        <div class="bundle-img-half"><span class="icon">👜</span><span>Sacoche Lui</span></div>
+        <div class="bundle-img-half"><span class="icon">👜</span><span>Sac Elle</span></div>
+      </div>
+      <div class="bundle-info">
+        <h3 class="bundle-name">Duo — Sacoche Homme + Sac Femme</h3>
+        <div class="bundle-price">
+          <span class="price-now">469 MAD</span>
+          <span class="price-was">608 MAD</span>
+          <span class="bundle-savings">-23%</span>
+        </div>
+        <button class="bundle-cta" onclick="openCheckoutDirect('Bundle Duo Lui & Elle','469','bag','')">Prendre le Bundle</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ REVIEWS ═══ -->
+<section class="reviews-section">
+  <div class="reviews-inner">
+    <div class="reviews-header">
+      <h2>Ils Ont Adopté le Style</h2>
+      <div class="reviews-badge">⭐ 4.8/5 — 280+ clients satisfaits</div>
+    </div>
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">K</div><div class="review-meta"><div class="review-name">Karim</div><div class="review-city">Tanger</div></div><span class="review-tag h">Homme</span></div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">La sacoche est exactement comme sur la photo, cuir propre. J'ai pris la noire, kayna f niveau 🔥</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">H</div><div class="review-meta"><div class="review-name">Houda</div><div class="review-city">Casablanca</div></div><span class="review-tag f">Femme</span></div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Wallah les talons sont magnifiques, confortables en plus 😍 J'ai pris la pointure 38, parfaite du premier coup!</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">S</div><div class="review-meta"><div class="review-name">Sara</div><div class="review-city">Rabat</div></div><span class="review-tag f">Femme</span></div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">J'ai commandé 2 sacs, un pour moi et un pour ma mère. Qualité top, packaging soigné ✅ On adore!</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">Y</div><div class="review-meta"><div class="review-name">Youssef</div><div class="review-city">Marrakech</div></div><span class="review-tag h">Homme</span></div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Livraison rapide, sandales confortables dès le premier jour. Pointure 43 = parfait, même taille que Zara 👌</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">L</div><div class="review-meta"><div class="review-name">Lamia</div><div class="review-city">Fès</div></div><span class="review-tag f">Femme</span></div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Les sandales Yasmine sont super confortables. J'ai hésité sur la taille mais le 39 est parfait comme prévu dans le guide 💕</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">A</div><div class="review-meta"><div class="review-name">Amine</div><div class="review-city">Meknès</div></div><span class="review-tag h">Homme</span></div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Les mocassins sont dingues, cuir souple, bhal les marques cher. Khdit 42 w jat mezyana 🔥</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">N</div><div class="review-meta"><div class="review-name">Nadia</div><div class="review-city">Agadir</div></div><span class="review-tag f">Femme</span></div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Le Sac Luna est magnifique, la couleur camel est encore plus belle en vrai. Deuxième commande déjà 🌸</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-top"><div class="review-avatar">M</div><div class="review-meta"><div class="review-name">Mehdi</div><div class="review-city">Oujda</div></div><span class="review-tag h">Homme</span></div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Sac à dos Explorer, pratique et stylé. Plein de poches. Livraison f 24h à Oujda, chapeau 👏</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REASSURANCE ═══ -->
+<section class="reassurance">
+  <div class="reassurance-grid">
+    <div class="reassurance-item">
+      <div class="reassurance-icon">🚚</div>
+      <h4 class="reassurance-title">Livraison Rapide</h4>
+      <p class="reassurance-desc">24-48h grandes villes, 48-72h partout au Maroc</p>
+    </div>
+    <div class="reassurance-item">
+      <div class="reassurance-icon">💵</div>
+      <h4 class="reassurance-title">Paiement à la Livraison</h4>
+      <p class="reassurance-desc">Vous payez quand vous recevez — aucun risque</p>
+    </div>
+    <div class="reassurance-item highlight">
+      <div class="reassurance-icon">🔄</div>
+      <h4 class="reassurance-title">Échange Taille Gratuit</h4>
+      <p class="reassurance-desc">Mauvaise pointure ? On échange sans frais, sans questions</p>
+    </div>
+    <div class="reassurance-item">
+      <div class="reassurance-icon">📱</div>
+      <h4 class="reassurance-title">Support WhatsApp</h4>
+      <p class="reassurance-desc">Réponse en moins de 2h, même le weekend</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ UGC ═══ -->
+<section class="ugc-section">
+  <h2>Comment Ils Le Portent</h2>
+  <p class="ugc-handle">#STEPRAStyle — @stepra.ma</p>
+  <div class="ugc-masonry">
+    <div class="ugc-item"><div class="ugc-placeholder"><span class="icon">📸</span><span>Homme — sacoche street</span></div></div>
+    <div class="ugc-item"><div class="ugc-placeholder tall"><span class="icon">📸</span><span>Femme — sac + outfit</span></div></div>
+    <div class="ugc-item"><div class="ugc-placeholder tall"><span class="icon">📸</span><span>Homme — sac à dos</span></div></div>
+    <div class="ugc-item"><div class="ugc-placeholder"><span class="icon">📸</span><span>Femme — talons look</span></div></div>
+    <div class="ugc-item"><div class="ugc-placeholder"><span class="icon">📸</span><span>Homme — sandales casual</span></div></div>
+    <div class="ugc-item"><div class="ugc-placeholder tall"><span class="icon">📸</span><span>Femme — pochette soirée</span></div></div>
+    <div class="ugc-item"><div class="ugc-placeholder"><span class="icon">📸</span><span>Couple — matching looks</span></div></div>
+    <div class="ugc-item"><div class="ugc-placeholder"><span class="icon">📸</span><span>Femme — sandales été</span></div></div>
+  </div>
+  <div class="ugc-socials">
+    <a href="#" class="ugc-social ig">📷 Instagram</a>
+    <a href="#" class="ugc-social tt">🎵 TikTok</a>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <h2>Questions Fréquentes</h2>
+    <div class="faq-item"><button class="faq-q"><span>Comment choisir ma taille de chaussures ?</span><span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Consultez notre guide des tailles plus haut sur cette page. Nos pointures correspondent aux tailles Zara / H&M / LC Waikiki. En cas de doute, prenez toujours la taille au-dessus — et l'échange est gratuit !</div></div></div>
+    <div class="faq-item"><button class="faq-q"><span>La matière des sacs, c'est quoi ?</span><span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Cuir synthétique premium ou cuir véritable selon le modèle. Chaque fiche produit précise la matière utilisée.</div></div></div>
+    <div class="faq-item"><button class="faq-q"><span>Je peux échanger si la taille ne va pas ?</span><span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Oui, échange gratuit sous 7 jours. Contactez-nous sur WhatsApp et on gère tout — sans frais et sans questions.</div></div></div>
+    <div class="faq-item"><button class="faq-q"><span>Vous livrez partout au Maroc ?</span><span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Oui, toutes les villes du Maroc. 24-48h pour les grandes villes (Casa, Rabat, Marrakech...), 48-72h pour le reste. Tay wsel l dar!</div></div></div>
+    <div class="faq-item"><button class="faq-q"><span>Comment payer ?</span><span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Paiement à la livraison (COD). Vous ne payez que quand le livreur arrive chez vous. Aucun paiement en ligne requis.</div></div></div>
+    <div class="faq-item"><button class="faq-q"><span>Vous avez des produits pour homme ET femme ?</span><span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Oui ! Notre collection couvre homme et femme. Utilisez les onglets en haut de page pour filtrer par genre et catégorie.</div></div></div>
+    <div class="faq-item"><button class="faq-q"><span>Les couleurs sont fidèles aux photos ?</span><span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Oui, nous photographions tous nos produits en lumière naturelle pour garantir la fidélité des couleurs.</div></div></div>
+    <div class="faq-item"><button class="faq-q"><span>Je peux offrir en cadeau ?</span><span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Oui, chaque commande est livrée dans un packaging soigné, prêt à offrir.</div></div></div>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA ═══ -->
+<section class="final-cta">
+  <h2>Trouvez Votre Pièce Préférée</h2>
+  <p class="final-cta-sub">Chri daba — livraison chez vous en 24-48h</p>
+  <div class="hero-ctas">
+    <a href="#products" class="btn btn-dark" data-gender="homme">Shop Homme</a>
+    <a href="#products" class="btn btn-accent" data-gender="femme">Shop Femme</a>
+  </div>
+  <p class="final-trust">Paiement à la livraison &bull; Livraison 24-48h &bull; Échange taille gratuit</p>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="footer-logo">STEP<span>RA</span></div>
+  <div class="footer-links">
+    <a href="#">Politique de confidentialité</a>
+    <a href="#">CGV</a>
+    <a href="#">Contact</a>
+    <a href="#">Guide des tailles</a>
+    <a href="#">Suivi de commande</a>
+  </div>
+  <div class="footer-socials">
+    <a href="#" title="Instagram">📷</a>
+    <a href="#" title="TikTok">🎵</a>
+    <a href="https://wa.me/212XXXXXXXXX" title="WhatsApp">💬</a>
+  </div>
+  <div class="footer-trust-row">
+    <span>💵 COD</span><span>🚚 Livraison rapide</span><span>🔄 Échange gratuit</span><span>🛡️ Qualité garantie</span>
+  </div>
+  <p class="footer-copy">&copy; 2026 STEPRA. Tous droits réservés.</p>
+</footer>
+
+<!-- ═══ WHATSAPP ═══ -->
+<a href="https://wa.me/212XXXXXXXXX?text=Salam%2C%20je%20voudrais%20des%20infos%20sur%20un%20produit" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+<!-- ═══ STICKY MOBILE BAR ═══ -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-left">
+    <div class="sticky-name">Sacoche Urban — Noir</div>
+    <div class="sticky-price">279 MAD</div>
+    <div class="sticky-size"></div>
+  </div>
+  <button class="sticky-btn" onclick="openCheckoutDirect('Sacoche Urban — Noir','279','bag','')">Commander</button>
+</div>
+
+<!-- ═══ CHECKOUT ═══ -->
+<div class="checkout-overlay" id="ckOverlay">
+  <div class="checkout-modal">
+    <div id="ckFormWrap">
+      <div class="ck-header">
+        <h3>Votre Commande</h3>
+        <button class="ck-close" onclick="closeCk()">&times;</button>
+      </div>
+      <div class="ck-product">
+        <div class="ck-product-img" id="ckIcon">👜</div>
+        <div class="ck-product-info">
+          <div class="ck-product-name" id="ckName">Sacoche Urban</div>
+          <div class="ck-product-detail" id="ckDetail"></div>
+          <div class="ck-product-price" id="ckPrice">279 MAD</div>
+        </div>
+      </div>
+      <div class="ck-sg-link" id="ckSizeGuideLink" onclick="openSizeGuide(currentGender)">📏 Consulter le guide des tailles</div>
+      <div class="exchange-badge-ck" id="ckExchange">🔄 Échange taille gratuit — mauvaise pointure ? On échange sans frais</div>
+      <form id="ckForm" onsubmit="submitCk(event)">
+        <div class="form-group"><label class="form-label">Nom complet *</label><input type="text" class="form-input" id="ckFullName" placeholder="Votre nom complet" required><div class="form-error">Veuillez entrer votre nom</div></div>
+        <div class="form-group"><label class="form-label">Téléphone *</label><div class="phone-wrap"><span class="phone-prefix">🇲🇦 +212</span><input type="tel" class="form-input" id="ckPhone" placeholder="6XX XXX XXX" required maxlength="9"></div><div class="form-error" id="ckPhoneErr">Numéro invalide — format: 6XX XXX XXX</div></div>
+        <div class="form-group"><label class="form-label">Ville *</label><select class="form-input" id="ckCity" required><option value="">Choisir votre ville</option><option>Casablanca</option><option>Rabat</option><option>Marrakech</option><option>Fès</option><option>Tanger</option><option>Meknès</option><option>Agadir</option><option>Oujda</option><option>Kénitra</option><option>Tétouan</option><option>Salé</option><option>Temara</option><option>Safi</option><option>Mohammedia</option><option>El Jadida</option><option>Beni Mellal</option><option>Nador</option><option>Khouribga</option><option>Settat</option><option>Berrechid</option><option>Taza</option><option>Khemisset</option><option>Larache</option><option>Guelmim</option><option>Errachidia</option><option>Ouarzazate</option><option>Al Hoceima</option><option>Essaouira</option><option>Tiznit</option><option>Taroudant</option><option>Dakhla</option><option>Laâyoune</option><option>Autre</option></select><div class="form-error">Veuillez sélectionner votre ville</div></div>
+        <div class="form-group"><label class="form-label">Adresse *</label><input type="text" class="form-input" id="ckAddress" placeholder="Votre adresse de livraison" required><div class="form-error">Veuillez entrer votre adresse</div></div>
+        <div class="form-group"><label class="form-label">Email <span class="opt">(optionnel)</span></label><input type="email" class="form-input" id="ckEmail" placeholder="votre@email.com"></div>
+        <div class="wa-badge">💬 Commande confirmée par WhatsApp</div>
+        <button type="submit" class="ck-submit">Confirmer la Commande — Paiement à la Livraison</button>
+        <p class="ck-trust">🔒 Vos données sont sécurisées — Livraison gratuite</p>
+      </form>
+    </div>
+    <div class="order-success" id="ckSuccess">
+      <div class="icon">✅</div>
+      <h3>Commande Confirmée !</h3>
+      <p>Merci ! Vous allez recevoir une confirmation par WhatsApp.</p>
+      <p><strong>Livraison estimée : 24-48h</strong></p>
+      <button class="btn btn-accent" onclick="closeCk()" style="margin-top:14px">Fermer</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── STATE ──
+let currentGender = 'homme';
+let currentCat = 'sacoches';
+let currentProduct = {};
+
+const catMap = {
+  homme: [
+    {key:'sacoches',label:'Sacoches'},
+    {key:'sacs-a-dos',label:'Sacs à Dos'},
+    {key:'sandales-h',label:'Sandales'},
+    {key:'mocassins',label:'Mocassins'}
+  ],
+  femme: [
+    {key:'sacs-a-main',label:'Sacs à Main'},
+    {key:'pochettes',label:'Pochettes & Clutches'},
+    {key:'talons',label:'Talons'},
+    {key:'sandales-f',label:'Sandales'}
+  ]
+};
+
+const titleMap = {
+  'sacoches':'Sacoches Homme','sacs-a-dos':'Sacs à Dos Homme','sandales-h':'Sandales Homme','mocassins':'Mocassins Homme',
+  'sacs-a-main':'Sacs à Main Femme','pochettes':'Pochettes Femme','talons':'Talons Femme','sandales-f':'Sandales Femme'
+};
+
+// ── URL PARAMS ──
+function readUrlParams(){
+  const p=new URLSearchParams(window.location.search);
+  if(p.get('gender')&&['homme','femme'].includes(p.get('gender')))currentGender=p.get('gender');
+  const cats=catMap[currentGender].map(c=>c.key);
+  if(p.get('category')&&cats.includes(p.get('category')))currentCat=p.get('category');
+  else currentCat=catMap[currentGender][0].key;
+}
+function updateUrl(){
+  const u=new URL(window.location);
+  u.searchParams.set('gender',currentGender);
+  u.searchParams.set('category',currentCat);
+  history.replaceState(null,'',u);
+}
+
+// ── GENDER SWITCH ──
+function switchGender(g){
+  currentGender=g;
+  currentCat=catMap[g][0].key;
+  renderCategoryTabs();
+  filterProducts();
+  updateUrl();
+  updateBundles();
+  document.querySelectorAll('.gender-tab').forEach(t=>t.classList.toggle('active',t.dataset.gender===g));
+  trackEvent('GenderToggle',{gender:g});
+}
+
+// ── CATEGORY TABS ──
+function renderCategoryTabs(){
+  const row=document.getElementById('categoryRow');
+  row.innerHTML=catMap[currentGender].map((c,i)=>
+    `<button class="cat-tab${i===0?' active':''}" data-cat="${c.key}">${c.label}</button>`
+  ).join('');
+  row.querySelectorAll('.cat-tab').forEach(t=>{
+    t.addEventListener('click',()=>{
+      currentCat=t.dataset.cat;
+      row.querySelectorAll('.cat-tab').forEach(x=>x.classList.toggle('active',x.dataset.cat===currentCat));
+      filterProducts();
+      updateUrl();
+      trackEvent('CategorySelect',{category:currentCat});
+    });
+  });
+}
+
+// ── FILTER ──
+function filterProducts(){
+  document.querySelectorAll('.product-card').forEach(c=>{
+    c.classList.toggle('hidden',!(c.dataset.gender===currentGender&&c.dataset.cat===currentCat));
+  });
+  document.getElementById('productsTitle').textContent=titleMap[currentCat]||'Nos Produits';
+}
+
+// ── BUNDLES ──
+function updateBundles(){
+  document.querySelectorAll('.bundle-card').forEach(b=>{
+    const bg=b.dataset.bundleGender;
+    b.classList.toggle('hidden',!(bg===currentGender||bg==='all'));
+  });
+}
+
+// ── SIZE PILLS ──
+document.addEventListener('click',e=>{
+  const pill=e.target.closest('.size-pill');
+  if(!pill||pill.classList.contains('out'))return;
+  const container=pill.closest('.size-pills')||pill.closest('.featured-sizes');
+  container.querySelectorAll('.size-pill,.f-size').forEach(p=>p.classList.remove('active'));
+  pill.classList.add('active');
+  const card=pill.closest('.product-card');
+  if(card)card.querySelector('.size-error')?.classList.remove('show');
+});
+document.addEventListener('click',e=>{
+  const fs=e.target.closest('.f-size');
+  if(!fs)return;
+  fs.closest('.featured-sizes').querySelectorAll('.f-size').forEach(p=>p.classList.remove('active'));
+  fs.classList.add('active');
+});
+
+// ── COLOR SWATCHES ──
+document.addEventListener('click',e=>{
+  const sw=e.target.closest('.swatch');
+  if(!sw)return;
+  sw.closest('.color-swatches').querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));
+  sw.classList.add('active');
+});
+
+// ── ADD TO CART ──
+function addToCart(btn){
+  const card=btn.closest('.product-card');
+  const type=card.dataset.type;
+  let size='';
+  if(type==='shoe'){
+    const active=card.querySelector('.size-pill.active');
+    if(!active){
+      card.querySelector('.size-error').classList.add('show');
+      return;
+    }
+    size=active.dataset.size;
+  }
+  openCheckoutDirect(card.dataset.name,card.dataset.price,type,size);
+  trackEvent('AddToCart',{name:card.dataset.name,price:card.dataset.price,size});
+}
+
+// ── CHECKOUT ──
+function openCheckoutDirect(name,price,type,size){
+  currentProduct={name,price,type,size};
+  document.getElementById('ckName').textContent=name;
+  document.getElementById('ckPrice').textContent=price+' MAD';
+  document.getElementById('ckDetail').textContent=size?'Pointure: '+size:'';
+  document.getElementById('ckIcon').textContent=type==='shoe'?'👟':'👜';
+  document.getElementById('ckSizeGuideLink').classList.toggle('show',type==='shoe');
+  document.getElementById('ckExchange').classList.toggle('show',type==='shoe');
+  document.getElementById('ckFormWrap').style.display='block';
+  document.getElementById('ckSuccess').classList.remove('visible');
+  document.getElementById('ckOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  trackEvent('InitiateCheckout',{name,price,size});
+}
+
+function closeCk(){
+  document.getElementById('ckOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('ckOverlay').addEventListener('click',e=>{if(e.target===document.getElementById('ckOverlay'))closeCk()});
+
+// ── PHONE ──
+const phoneIn=document.getElementById('ckPhone');
+phoneIn.addEventListener('input',()=>{phoneIn.value=phoneIn.value.replace(/\D/g,'').slice(0,9)});
+function validPhone(n){return/^[0-9]{9}$/.test(n)&&(n[0]==='6'||n[0]==='7'||n[0]==='5')}
+
+// ── SUBMIT ──
+function submitCk(e){
+  e.preventDefault();
+  let ok=true;
+  const f=document.getElementById('ckFullName'),p=document.getElementById('ckPhone'),c=document.getElementById('ckCity'),a=document.getElementById('ckAddress');
+  [f,p,c,a].forEach(x=>x.classList.remove('error'));
+  if(!f.value.trim()){f.classList.add('error');ok=false}
+  if(!validPhone(p.value)){p.classList.add('error');ok=false}
+  if(!c.value){c.classList.add('error');ok=false}
+  if(!a.value.trim()){a.classList.add('error');ok=false}
+  if(!ok)return;
+  trackEvent('Purchase',{name:currentProduct.name,price:currentProduct.price,size:currentProduct.size});
+  document.getElementById('ckFormWrap').style.display='none';
+  document.getElementById('ckSuccess').classList.add('visible');
+}
+
+// ── SIZE GUIDE ──
+function openSizeGuide(gender){
+  const src=document.getElementById(gender==='femme'?'sgFemme':'sgHomme');
+  document.getElementById('sgModalContent').innerHTML=src.innerHTML+
+    document.querySelector('.sg-diagram').outerHTML+
+    document.querySelector('.sg-tip').outerHTML+
+    document.querySelector('.sg-ref').outerHTML;
+  document.getElementById('sgModal').classList.add('open');
+  trackEvent('SizeGuideOpen',{gender});
+}
+function closeSizeGuide(){document.getElementById('sgModal').classList.remove('open')}
+function switchSizeGuide(g){
+  document.querySelectorAll('.sg-tab').forEach(t=>t.classList.toggle('active',t.dataset.sgtab===g));
+  document.getElementById('sgHomme').classList.toggle('active',g==='homme');
+  document.getElementById('sgFemme').classList.toggle('active',g==='femme');
+}
+
+// ── FAQ ──
+document.querySelectorAll('.faq-q').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const it=b.parentElement,open=it.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!open)it.classList.add('open');
+  });
+});
+
+// ── HERO CTA LINKS ──
+document.querySelectorAll('[data-gender]').forEach(el=>{
+  if(el.tagName==='A')el.addEventListener('click',()=>switchGender(el.dataset.gender));
+});
+
+// ── GENDER ROW CLICKS ──
+document.querySelectorAll('.gender-tab').forEach(t=>{
+  t.addEventListener('click',()=>switchGender(t.dataset.gender));
+});
+
+// ── STICKY BAR ──
+if(window.innerWidth<768){
+  const bar=document.getElementById('stickyBar');
+  const obs=new IntersectionObserver(([e])=>{bar.classList.toggle('visible',!e.isIntersecting)},{threshold:0});
+  obs.observe(document.getElementById('hero'));
+}
+
+// ── HEADER SHADOW ──
+window.addEventListener('scroll',()=>{
+  document.getElementById('header').style.boxShadow=window.scrollY>50?'0 2px 16px rgba(0,0,0,.08)':'none';
+});
+
+// ── TRACKING HELPER ──
+function trackEvent(ev,data){
+  if(typeof fbq==='function'){
+    if(['AddToCart','InitiateCheckout','Purchase','ViewContent'].includes(ev))
+      fbq('track',ev,{content_name:data?.name,value:parseFloat(data?.price||0),currency:'MAD'});
+    else fbq('trackCustom',ev,data);
+  }
+  if(typeof ttq!=='undefined'){
+    const ttMap={Purchase:'CompletePayment'};
+    ttq.track(ttMap[ev]||ev,data);
+  }
+}
+
+// ── INIT ──
+readUrlParams();
+switchGender(currentGender);
+document.querySelectorAll('.cat-tab').forEach(t=>{
+  if(t.dataset.cat===currentCat){t.click()}
+});
+trackEvent('ViewContent',{name:'STEPRA Landing Page'});
+</script>
+
+<!-- META PIXEL (replace YOUR_PIXEL_ID) -->
+<!--
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');
+</script>
+-->
+
+<!-- TIKTOK PIXEL (replace YOUR_TIKTOK_PIXEL_ID) -->
+<!--
+<script>
+!function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{};ttq._i[e]=[];ttq._i[e]._u=i;ttq._t=ttq._t||{};ttq._t[e+"_"+Date.now()]={};var o=document.createElement("script");o.type="text/javascript";o.async=!0;o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};ttq.load('YOUR_TIKTOK_PIXEL_ID');ttq.page()}(window,document,'ttq');
+</script>
+-->
+
+</body>
+</html>
